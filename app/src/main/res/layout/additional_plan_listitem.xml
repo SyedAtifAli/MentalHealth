@@ -29,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="2"
                 android:textStyle="bold"
+
                 android:text="Foundation Course for an.."
                 android:fontFamily="@font/alatsi"
                 android:id="@+id/AP_item_title"/>
@@ -46,11 +47,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Start"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
                 android:layout_alignParentBottom="true"
                 android:textStyle="bold"
                 android:fontFamily="@font/assistant_semibold"
                 android:textSize="16sp"
-                android:padding="10dp"/>
+                android:layout_marginRight="5dp"
+                android:padding="5dp"/>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
