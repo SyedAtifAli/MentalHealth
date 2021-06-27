@@ -63,6 +63,9 @@ dependencies {
     //for diary
     implementation 'com.jakewharton:butterknife:8.4.0'
 
+    //gif image view
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
+
 
 //    // Lifecycle + ViewModel & LiveData
 //    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"

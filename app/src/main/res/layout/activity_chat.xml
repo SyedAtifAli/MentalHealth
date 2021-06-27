@@ -1,142 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <RelativeLayout
-        android:orientation="vertical"
-        android:background="@drawable/chat_background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/chat_background"
+        android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            app:cardCornerRadius="0dp"
-            app:cardElevation="5dp"
             android:id="@+id/top_bar"
-            app:cardBackgroundColor="#3b2452"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            app:cardBackgroundColor="#3b2452"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="5dp">
+
             <RelativeLayout
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
 
                 <ImageView
-                    android:visibility="gone"
                     android:id="@+id/bot_speech_toggle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ic_mute_button"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/show_description"
-                    android:textStyle="bold"
-                    android:textColor="#fafafa"
-                    android:textSize="20sp"
-                    android:text="Chat Bot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:text="Chat Bot"
+                    android:textColor="#fafafa"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/delete_chats"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_delete_chats_button"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:src="@drawable/ic_delete_chats_button" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_below="@+id/top_bar"
-            android:layout_above="@+id/bot_writing_view"
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@+id/bot_writing_view"
+            android:layout_below="@+id/top_bar"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:scrollbars="none" />
 
         <ImageView
-            android:layout_above="@id/card_view"
             android:id="@+id/bot_writing_view"
             android:layout_width="70dp"
             android:layout_height="50dp"
-            android:scaleType="centerCrop"
+            android:layout_above="@id/card_view"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="5dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/typing"
             android:visibility="gone" />
 
         <androidx.cardview.widget.CardView
-            android:layout_alignParentBottom="true"
             android:id="@+id/card_view"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true">
 
 
-                    <LinearLayout
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/button_background"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/button_background"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
 
-                        <EditText
-                            android:id="@+id/message_input_view"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_margin="2dp"
-                            android:background="@null"
-                            android:textColor="#1b1c1e"
-                            android:textColorHint="#808080"
-                            android:hint="Type a Message..." />
-                        <ImageView
-                            android:id="@+id/message_send_button"
-                            android:layout_marginEnd="10dp"
-                            android:src="@drawable/send_arrow"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp" />
+                <EditText
+                    android:id="@+id/message_input_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Type a Message..."
+                    android:textColor="#1b1c1e"
+                    android:textColorHint="#808080" />
+
+                <ImageView
+                    android:id="@+id/message_send_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/send_arrow" />
 
 
-                    </LinearLayout>
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:padding="10dp"
         app:behavior_hideable="true"
         app:behavior_peekHeight="0dp"
-        app:layout_behavior="@string/bottom_sheet_behavior"
-        android:layout_width="match_parent"
-        android:layout_height="400dp">
+        app:layout_behavior="@string/bottom_sheet_behavior">
 
         <TextView
             android:id="@+id/about_black_bot"
-            android:gravity="center"
-            android:textColor="#fff"
-            android:textSize="20sp"
-            android:text="Paul's Black Bot\n\n The quick brown fox jumps over the lazy dog..."
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Paul's Black Bot\n\n The quick brown fox jumps over the lazy dog..."
+            android:textColor="#fff"
+            android:textSize="20sp" />
 
     </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/loading_screen_chat"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:clickable="true"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.7"
+            android:background="#bbd2ef" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/loading_robo"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/loading_robot" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loading_robo"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/alatsi"
+            android:text="Initializing Bot"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+
+    </RelativeLayout>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

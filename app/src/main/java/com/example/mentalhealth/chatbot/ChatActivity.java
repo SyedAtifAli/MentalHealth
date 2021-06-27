@@ -2,7 +2,6 @@ package com.example.mentalhealth.chatbot;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -26,6 +25,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -166,18 +166,21 @@ public class ChatActivity extends AppCompatActivity {
         }
 
 
-        final ProgressDialog pd = new ProgressDialog(ChatActivity.this);
-        pd.setTitle("Please Wait");
-        pd.setMessage("Initializing Bot...");
-        pd.setCanceledOnTouchOutside(false);
-        pd.setCancelable(false);
+//        final ProgressDialog pd = new ProgressDialog(ChatActivity.this);
+//        pd.setTitle("Please Wait");
+//        pd.setMessage("Initializing Bot...");
+//        pd.setCanceledOnTouchOutside(false);
+//        pd.setCancelable(false);
+
+        RelativeLayout pd = findViewById(R.id.loading_screen_chat);
+        pd.setVisibility(View.VISIBLE);
 
         // handler for communication with the background thread
-         final Handler handler = new Handler() {
+        final Handler handler = new Handler() {
             @Override
             public void dispatchMessage(Message msg) {
                 super.dispatchMessage(msg);
-                pd.cancel();
+                pd.setVisibility(View.GONE);
             }
         };
 
@@ -194,7 +197,7 @@ public class ChatActivity extends AppCompatActivity {
         });
 
         // finally show the progress dialog box and start the thread
-        pd.show();
+        pd.setVisibility(View.VISIBLE);
         thread.start();
 
         // listen for button click
