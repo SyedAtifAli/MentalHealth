@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<category><pattern>DAY</pattern>
+<template>Today is <date format="%A" jformat="EEEEEEEEEE"/></template>
+</category>
+<category><pattern>YEAR</pattern>
+<template>This is <date format="%Y" jformat="YYYY"/></template>
+</category>
+<category><pattern>MONTH</pattern>
+<template>This is <date format="%B" jformat="MM"/></template>
+</category>
+<category><pattern>TIME</pattern>
+<template>The time is <date format="%I:%M %p" jformat="h:mm a"/></template>
+</category>
+<category><pattern>DATE</pattern>
+<template>Today is <date format="%B %d, %Y" jformat="MM dd, YYYY"/></template>
+</category>
+<category><pattern>DATE AND TIME</pattern>
+<template>The date and time is <date/></template>
+</category>
+</aiml>

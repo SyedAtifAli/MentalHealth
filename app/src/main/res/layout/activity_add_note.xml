@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/area_kontrol"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txt_judul"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffccbc"
+                android:hint="Heading"
+                android:textSize="12pt"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txt_konten"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top|start"
+                android:hint="some text in here.."
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                android:background="#fff3e0"
+                android:textSize="8pt" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+

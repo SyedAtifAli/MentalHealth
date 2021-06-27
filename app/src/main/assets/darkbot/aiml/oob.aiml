@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<category><pattern>TEACH ME <SET>LANGUAGE</SET></pattern>
+<template><srai>LANGUAGE</srai> To learn <star/>, use a broswer to search, try "OPEN Chrome"</template>
+</category>
+<category><pattern>CLEAR LOG</pattern>
+<template>Clearing... Done!</template>
+</category>
+<category><pattern>*</pattern><that>WHAT WOULD YOU LIKE TO WRITE ON TWITTER</that>
+<template><srai>TWEET <star/></srai></template>
+</category>
+<category><pattern>SEND MAIL</pattern>
+<template><srai>SEND EMAIL</srai></template>
+</category>
+<category><pattern>SHOW ME A VIDEO *</pattern>
+<template>YOU can use YOUtube, try saying 'OPEN youtube'</template>
+</category>
+<category><pattern>SHOW ME A WEBSITE ABOUT *</pattern>
+<template>Try a google search! Try saying 'OPEN Chrome'</template>
+</category>
+<category><pattern>I WANT TO BUY *</pattern>
+<template>Use any e-commerce app! E.g Try saying 'OPEN amazon'</template>
+</category>
+<category><pattern>I AM FAT</pattern>
+<template>Look for a weight loss center in map, try saying 'OPEN map'</template>
+</category>
+<category><pattern>I AM HUNGRY</pattern>
+<template>Try searching for RESTAURANTS in map, try saying 'OPEN map'</template>
+</category>
+<category><pattern>I AM GOING TO KILL *</pattern>
+<template>Keep calm! You are scaring me!! Try saying 'CALL 100'</template>
+</category>
+<category><pattern>BATTERY LEVEL</pattern>
+<template>Look at the right-top corner!</template>
+</category>
+<category><pattern>GOOGLE</pattern>
+<template>Try opening a browser, try saying 'OPEN app-name'</template>
+</category>
+<category><pattern>GOOGLE *</pattern>
+<template>Try opening a browser, try saying 'OPEN app-name'</template>
+</category>
+<category><pattern>SEARCH *</pattern>
+<template>Try opening a browser, try saying 'OPEN app-name'</template>
+</category>
+<category><pattern>FIND ME A *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>FIND A *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>FIND MY LOCATION</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>FIND *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>FIND THE NEAREST STARBUCKS</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>FIND THE NEAREST *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>FIND NEAREST *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>YES</pattern><that>WOULD YOU LIKE TO SEND THIS FEATURE REQUEST *</that>
+<template>I don't know how to answer that! Sorry!</template>
+</category>
+<category><pattern>DIRECTIONS TO *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>DIRECTIONS *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>DIRECTIONS FROM * TO *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>TACO</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>PIZZA</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE ARE THE *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS A *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS PASADENA</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS THE CLOSEST *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS THE NEAREST STARBUCKS</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS THE NEAREST GAS STATION</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS THE NEAREST *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS THE NEAREST WALMART</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS THE NEAREST MCDONALD S</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS YORKSHIRE</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS NEW YORK</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS LEEDS</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE IS INDIA</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE CAN I FIND A *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE CAN I GET *</pattern>
+<template>Try looking for that on the map, open by saying 'open map'</template>
+</category>
+<category><pattern>WHERE CAN I GO *</pattern>
+<template>Where ever you may go, I will always be with ya! : )</template>
+</category>
+<category><pattern>MAP</pattern>
+<template>Want to open map, try 'OPEN map'</template>
+</category>
+<category><pattern>BROWSE TO *</pattern>
+<template>Try opening browser by saying 'open browser-name'</template>
+</category>
+<category><pattern>PLAY *</pattern>
+<template>I can open any music player app for you, just try saying 'OPEN music-app-name'</template>
+</category>
+<category><pattern>WIFI ON</pattern>
+<template>Do it yourself, otherwise you will get lazy!</template>
+</category>
+<category><pattern>WIFI OFF</pattern>
+<template>I think you can do it yourself, I don't wanna make you lazy</template>
+</category>
+<category><pattern>HOROSCOPE *</pattern>
+<template>I can't tell you anything about horoscope! Try using any web browser to seach for it!</template>
+</category>
+<category><pattern>JOBS *</pattern>
+<template>I can open any relevant app, if you need, just say 'OPEN app-name'</template>
+</category>
+<category><pattern>TWEET *</pattern>
+<template>Try saying 'open twitter' I can help you open the app! But you have to tweet yourself!</template>
+</category>
+<category><pattern>RESTAURANTS</pattern>
+<template>You can say 'OPEN Map' I can help you open Map on your device, you can search there!</template>
+</category>
+<category><pattern>WHAT IS THE DISTANCE TO *</pattern>
+<template>You can use Google Map to get the distance!</template>
+</category>
+<category><pattern>WHAT IS THE ADDRESS TO *</pattern>
+<template>You can say 'OPEN Map' I can help you open Map on your device!</template>
+</category>
+<category><pattern>TEST ALARM</pattern>
+<template>You can use your google assistance for that purpose! I am still a kiddo!</template>
+</category>
+<category><pattern>OPEN * DOT COM</pattern>
+<template>I can't help you with that!</template>
+</category>
+<category><pattern>OPEN * COM</pattern>
+<template>That's out of my domain : ( Sorry!!</template>
+</category>
+<category><pattern>GPS ON</pattern>
+<template>Use Settings to turn on GPS.</template>
+</category>
+<category><pattern>GPS OFF</pattern>
+<template>Use Settings to turn off GPS.</template>
+</category>
+</aiml>

@@ -1,0 +1,7 @@
+url:syedatifali.github.io
+name:Chat Bot
+email:syedatifali2580@gmail.com
+gender:male
+botmaster:Syed Atif Ali
+organization:App
+version:0.0.1
