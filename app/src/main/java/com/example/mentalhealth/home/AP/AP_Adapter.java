@@ -39,7 +39,7 @@ public class AP_Adapter extends RecyclerView.Adapter<AP_Holder>{
     public void onBindViewHolder(@NonNull @NotNull AP_Holder holder, int position) {
         holder.title.setText(object_list.get(position).title);
         holder.duration.setText(object_list.get(position).duration);
-        holder.AP_wv.loadUrl("file:///android_asset/html_css/AP.html");
+//        holder.AP_wv.loadUrl("file:///android_asset/html_css/AP.html");
     }
 
     @Override

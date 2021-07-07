@@ -18,6 +18,8 @@ import com.luseen.luseenbottomnavigation.BottomNavigation.BottomNavigationItem;
 import com.luseen.luseenbottomnavigation.BottomNavigation.BottomNavigationView;
 import com.luseen.luseenbottomnavigation.BottomNavigation.OnBottomNavigationItemClickListener;
 
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseView;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -93,6 +95,15 @@ public class MainActivity extends AppCompatActivity {
 //            return false;
 //        });
         ImageView main_fab = findViewById(R.id.main_FAB);
+
+        new MaterialShowcaseView.Builder(this)
+                .setTarget(main_fab)
+                .setDismissText("GOT IT")
+                .setContentText("Hi!! welcome aboard.\nYou can start a conversation\nwith alexa\njust tap on this button.")
+                .setDelay(1000) // optional but starting animations immediately in onCreate can make them choppy
+                .singleUse("alexa") // provide a unique ID used to ensure it is only shown once
+                .show();
+
         main_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

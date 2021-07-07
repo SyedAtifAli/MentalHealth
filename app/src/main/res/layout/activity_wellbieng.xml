@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#9ad2b3">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/ir_topical_courses_header" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_edge_activity">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your Well-Being Guide"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="18dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/this_is_ur_moment"
+                        android:paddingLeft="18dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="18dp"
+                        android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="18dp"
+                            android:paddingRight="18dp"
+                            android:textColor="#4caf50"
+                            android:text="@string/more_courses_will_be"
+                            android:layout_marginTop="10dp"/>
+
+                       <RelativeLayout
+                           android:layout_marginTop="15dp"
+                           android:layout_width="match_parent"
+                           android:layout_height="230dp"
+                           android:paddingLeft="31dp"
+                           android:paddingRight="31dp"
+                           >
+
+                           <com.wajahatkarim3.easyflipview.EasyFlipView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               app:flipOnTouch="true"
+                               app:flipEnabled="true"
+                               app:flipDuration="400"
+                               app:flipFrom="right"
+                               app:flipType="horizontal"
+                               app:autoFlipBack="false"
+                               android:layout_alignParentLeft="true"
+                               >
+
+                               <!-- Back Layout Goes Here -->
+                               <include layout="@layout/resilience_flash_card_layout_back"/>
+
+                               <!-- Front Layout Goes Here -->
+                               <include layout="@layout/resilience_flash_card_layout_front"/>
+
+                           </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                           <TextView
+                               android:id="@+id/WB_resilience"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_alignParentLeft="true"
+                               android:text="Cultivating\nResilience"
+                               android:layout_alignParentBottom="true"
+                               android:textColor="@color/black"
+                               android:fontFamily="@font/alatsi"
+                               android:textSize="14sp"/>
+
+
+                           <com.wajahatkarim3.easyflipview.EasyFlipView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               app:flipOnTouch="true"
+                               app:flipEnabled="true"
+                               app:flipDuration="400"
+                               app:flipFrom="right"
+                               app:flipType="horizontal"
+                               app:autoFlipBack="false"
+                               android:layout_alignParentEnd="true"
+                               >
+
+                               <!-- Back Layout Goes Here -->
+                               <include layout="@layout/lonliness_flash_card_layout_back"/>
+
+                               <!-- Front Layout Goes Here -->
+                               <include layout="@layout/loneliness_flash_card_layout_front"/>
+
+                           </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_alignParentRight="true"
+                               android:text="Keeping Loneliness\nat Bay"
+                               android:layout_alignParentBottom="true"
+                               android:textColor="@color/black"
+                               android:textSize="14sp"
+                               android:fontFamily="@font/alatsi"
+                               android:textAlignment="viewEnd"
+                               android:id="@+id/WB_lonliness"/>
+
+                       </RelativeLayout>
+
+                        <RelativeLayout
+                           android:layout_marginTop="15dp"
+                           android:layout_width="match_parent"
+                           android:layout_height="230dp"
+                           android:paddingLeft="31dp"
+                           android:paddingRight="31dp"
+                           >
+
+                           <com.wajahatkarim3.easyflipview.EasyFlipView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               app:flipOnTouch="true"
+                               app:flipEnabled="true"
+                               app:flipDuration="400"
+                               app:flipFrom="right"
+                               app:flipType="horizontal"
+                               app:autoFlipBack="false"
+                               android:layout_alignParentLeft="true"
+                               >
+
+                               <!-- Back Layout Goes Here -->
+                               <include layout="@layout/self_love_flash_card_layout_back"/>
+
+                               <!-- Front Layout Goes Here -->
+                               <include layout="@layout/self_love_flash_card_layout_front"/>
+
+                           </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="Cultivating\nSelf-Love"
+                                android:layout_alignParentBottom="true"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/alatsi"
+                                android:textSize="14sp"
+                                android:id="@+id/WB_selflove"/>
+
+                           <com.wajahatkarim3.easyflipview.EasyFlipView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               app:flipOnTouch="true"
+                               app:flipEnabled="true"
+                               app:flipDuration="400"
+                               app:flipFrom="right"
+                               app:flipType="horizontal"
+                               app:autoFlipBack="false"
+                               android:layout_alignParentEnd="true"
+                               >
+
+                               <!-- Back Layout Goes Here -->
+                               <include layout="@layout/anxiety_flash_card_layout_back"/>
+
+                               <!-- Front Layout Goes Here -->
+                               <include layout="@layout/anxiety_flash_card_layout_front"/>
+
+                           </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="Managing Health\nAnxiety &amp; Panic"
+                                android:layout_alignParentBottom="true"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/alatsi"
+                                android:textAlignment="viewEnd"/>
+
+                       </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:paddingLeft="18dp"
+                            android:layout_height="wrap_content"
+                            android:text="More courses coming soon!"
+                            android:layout_margin="10dp"
+                            android:textColor="#4caf50"
+                            android:id="@+id/WB_anxiety"/>
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </FrameLayout>
+    </RelativeLayout>
+</LinearLayout>

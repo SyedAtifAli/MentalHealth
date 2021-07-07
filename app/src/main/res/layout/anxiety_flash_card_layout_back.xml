@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fba6c7"
+        android:fontFamily="@font/roboto_light"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:text="Anxiety is your body's natural response to stress. It's a feeling of fear or apprehension about what's to come."
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+</androidx.cardview.widget.CardView>

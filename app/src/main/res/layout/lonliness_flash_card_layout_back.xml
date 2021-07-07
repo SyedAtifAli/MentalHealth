@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="14sp"
+        android:padding="10dp"
+        android:textColor="#33311a"
+        android:background="#f4df4a"
+        android:fontFamily="@font/roboto_light"
+        android:text="Loneliness is an emotional response to isolation. It is often associated with an unwanted lack of connection and intimacy."
+        android:scaleType="centerCrop"/>
+
+</androidx.cardview.widget.CardView>

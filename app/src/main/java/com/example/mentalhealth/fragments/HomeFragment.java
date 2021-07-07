@@ -1,11 +1,11 @@
 package com.example.mentalhealth.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -18,6 +18,8 @@ import com.example.mentalhealth.home.AP.AP_Adapter;
 import com.example.mentalhealth.home.AP.AP_Objects;
 import com.example.mentalhealth.home.Activities.RA_Adapter;
 import com.example.mentalhealth.home.Activities.RA_Objects;
+import com.example.mentalhealth.well_bieng_guide.Well_Being_Activity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.hsalf.smilerating.BaseRating;
 import com.hsalf.smilerating.SmileRating;
 
@@ -28,7 +30,7 @@ public class HomeFragment extends Fragment {
 
     RecyclerView AP;  //Additional Plan
     RecyclerView RA;  //Recommended Activities
-    ImageView main_fab;
+    FloatingActionButton WB_fab;
     WebView mood_wv;
 
     @Override
@@ -96,14 +98,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//        main_fab = v.findViewById(R.id.main_FAB);
-//        main_fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getContext() , ChatActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        WB_fab = v.findViewById(R.id.well_being_arrow);
+        WB_fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext() , Well_Being_Activity.class);
+                startActivity(intent);
+            }
+        });
 
         mood_wv = v.findViewById(R.id.mood_wv);
         mood_wv.loadUrl("file:///android_asset/html_css/arrow.html");

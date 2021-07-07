@@ -117,7 +117,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="8dp"
                         android:fontFamily="@font/alatsi"
-                        android:text="Take a quick look at your 2 week plan"
+                        android:text="Take a quick look at your plan"
                         android:textColor="@color/white"
                         android:textSize="14sp" />
 
@@ -145,7 +145,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/additional_plans_rv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
 
         </LinearLayout>
@@ -271,14 +271,6 @@
 
 </ScrollView>
 
-<!--    <de.hdodenhof.circleimageview.CircleImageView-->
-<!--        android:layout_width="56dp"-->
-<!--        android:layout_height="56dp"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_margin="15dp"-->
-<!--        android:id="@+id/main_FAB"-->
-<!--        android:background="@drawable/chatbot_icon"/>-->
 
     </RelativeLayout>
 

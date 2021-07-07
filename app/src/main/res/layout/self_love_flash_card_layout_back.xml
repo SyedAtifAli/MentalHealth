@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="14sp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:background="#ffcfc1"
+        android:fontFamily="@font/roboto_light"
+        android:text="Self-love, defined as love of self or regard for one's own happiness or advantage, has been conceptualized both as a basic human necessity"
+        android:scaleType="centerCrop"/>
+
+</androidx.cardview.widget.CardView>
