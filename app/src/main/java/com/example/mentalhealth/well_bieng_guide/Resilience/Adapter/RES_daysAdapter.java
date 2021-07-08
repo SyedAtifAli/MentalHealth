@@ -44,17 +44,33 @@ public class RES_daysAdapter extends RecyclerView.Adapter<RES_daysAdapter.myView
         Resilience_DBHelper helper = new Resilience_DBHelper(context);
         int day = helper.getDay();
 
+
+        if(position < day){
+            holder.check2.setVisibility(View.VISIBLE);
+            holder.dayCount.setText(list.get(position).getDay());
+            holder.dayTitle.setText(list.get(position).getTitle());
+            holder.startDay.setVisibility(View.VISIBLE);
+
+        }
+
+        else if(position == day) {
             holder.dayCount.setText(list.get(position).getDay());
             holder.dayTitle.setText(list.get(position).getTitle());
             holder.startDay.setVisibility(View.VISIBLE);
             holder.startDay.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    helper.saveDay(1);
+                    helper.saveDay(position+1);
 
                 }
             });
-
+        }
+        else
+        {
+            holder.dayCount.setText(list.get(position).getDay());
+            holder.dayTitle.setText("Locked");
+            holder.startDay.setVisibility(View.GONE);
+        }
 
         helper.close();
     }
@@ -67,7 +83,7 @@ public class RES_daysAdapter extends RecyclerView.Adapter<RES_daysAdapter.myView
 
     class myViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView check;
+        ImageView check , check2;  //check2 is "#9cd1b3" this color bg , setting its visibility as visible will show the tick mark
         TextView dayCount, dayTitle;
         RelativeLayout startDay;
 
@@ -75,6 +91,7 @@ public class RES_daysAdapter extends RecyclerView.Adapter<RES_daysAdapter.myView
             super(itemView);
 
             check = itemView.findViewById(R.id.res_LI_check);
+            check2 = itemView.findViewById(R.id.res_LI_check2);
             dayCount = itemView.findViewById(R.id.days_LI_daysNum);
             dayTitle = itemView.findViewById(R.id.days_LI_title);
             startDay = itemView.findViewById(R.id.res_LI_startDay);
