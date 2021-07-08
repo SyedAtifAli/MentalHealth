@@ -196,6 +196,7 @@
                                 android:layout_alignParentBottom="true"
                                 android:textColor="@color/black"
                                 android:textSize="14sp"
+                                android:id="@+id/WB_anxiety"
                                 android:fontFamily="@font/alatsi"
                                 android:textAlignment="viewEnd"/>
 
@@ -207,8 +208,7 @@
                             android:layout_height="wrap_content"
                             android:text="More courses coming soon!"
                             android:layout_margin="10dp"
-                            android:textColor="#4caf50"
-                            android:id="@+id/WB_anxiety"/>
+                            android:textColor="#4caf50"/>
 
                     </LinearLayout>
                 </ScrollView>

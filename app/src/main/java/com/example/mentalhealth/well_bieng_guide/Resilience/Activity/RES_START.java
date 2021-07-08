@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mentalhealth.R;
 import com.example.mentalhealth.well_bieng_guide.Resilience.Adapter.RES_daysAdapter;
-import com.example.mentalhealth.well_bieng_guide.Resilience.Model.DAYS;
+import com.example.mentalhealth.well_bieng_guide.Model.DAYS;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -45,6 +45,18 @@
         <activity
             android:name=".well_bieng_guide.Resilience.Activity.RES_START"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
+        <activity
+            android:name=".well_bieng_guide.Loneliness.Activity.Loneliness_Start"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+
+        <activity
+            android:name=".well_bieng_guide.Anxiety.Activity.Anxiety_START"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+
+        <activity
+            android:name=".well_bieng_guide.SelfLove.Activity.Selflove_START"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
     </application>
 
 </manifest>

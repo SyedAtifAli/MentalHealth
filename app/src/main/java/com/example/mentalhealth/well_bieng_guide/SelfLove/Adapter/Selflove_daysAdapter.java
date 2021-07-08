@@ -1,4 +1,4 @@
-package com.example.mentalhealth.well_bieng_guide.Resilience.Adapter;
+package com.example.mentalhealth.well_bieng_guide.SelfLove.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,18 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mentalhealth.R;
 import com.example.mentalhealth.well_bieng_guide.Model.DAYS;
-import com.example.mentalhealth.well_bieng_guide.Resilience.SQLite.Resilience_DBHelper;
+import com.example.mentalhealth.well_bieng_guide.SelfLove.SQLite.Selflove_DBHelper;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class RES_daysAdapter extends RecyclerView.Adapter<RES_daysAdapter.myViewHolder> {
+public class Selflove_daysAdapter extends RecyclerView.Adapter<Selflove_daysAdapter.myViewHolder> {
 
     Context context;
     List<DAYS> list ;
 
-    public RES_daysAdapter(Context context , List<DAYS> list) {
+    public Selflove_daysAdapter(Context context , List<DAYS> list) {
         this.context = context;
         this.list = list;
     }
@@ -32,7 +32,7 @@ public class RES_daysAdapter extends RecyclerView.Adapter<RES_daysAdapter.myView
     @NonNull
     @NotNull
     @Override
-    public RES_daysAdapter.myViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public Selflove_daysAdapter.myViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.res_days_listitem, null);
         myViewHolder holder = new myViewHolder(view);
         return holder;
@@ -41,7 +41,7 @@ public class RES_daysAdapter extends RecyclerView.Adapter<RES_daysAdapter.myView
     @Override
     public void onBindViewHolder(@NonNull @NotNull myViewHolder holder, int position) {
 
-        Resilience_DBHelper helper = new Resilience_DBHelper(context);
+        Selflove_DBHelper helper = new Selflove_DBHelper(context);
         int day = helper.getDay();
 
 
@@ -81,7 +81,7 @@ public class RES_daysAdapter extends RecyclerView.Adapter<RES_daysAdapter.myView
         return 8;
     }
 
-    static class myViewHolder extends RecyclerView.ViewHolder {
+    class myViewHolder extends RecyclerView.ViewHolder {
 
         ImageView check , check2;  //check2 is "#9cd1b3" this color bg , setting its visibility as visible will show the tick mark
         TextView dayCount, dayTitle;

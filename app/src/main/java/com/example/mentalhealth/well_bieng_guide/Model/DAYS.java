@@ -1,4 +1,4 @@
-package com.example.mentalhealth.well_bieng_guide.Resilience.Model;
+package com.example.mentalhealth.well_bieng_guide.Model;
 
 public class DAYS {
 
