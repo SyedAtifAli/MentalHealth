@@ -14,7 +14,6 @@ import com.example.mentalhealth.Recommended_Activities.play_activity;
 import com.example.mentalhealth.Recommended_Activities.play_activity2;
 import com.example.mentalhealth.diary.Adapter.BaseAdapter;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -30,18 +29,16 @@ public class RA_Adapter extends RecyclerView.Adapter<RA_Holder>{
     }
 
     @NonNull
-    @NotNull
     @Override
-    public RA_Holder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public RA_Holder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recommended_act_listitem, null);
         RA_Holder holder = new RA_Holder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull RA_Holder holder, int position) {
+    public void onBindViewHolder(@NonNull  RA_Holder holder, int position) {
         holder.title.setText(object_list.get(position).title);
-        holder.RA_wv.loadUrl("file:///android_asset/html_css/RA.html");
 
         holder.title.setOnClickListener(new View.OnClickListener() {
             @Override

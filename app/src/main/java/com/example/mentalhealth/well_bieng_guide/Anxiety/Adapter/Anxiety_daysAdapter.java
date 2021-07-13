@@ -15,8 +15,6 @@ import com.example.mentalhealth.R;
 import com.example.mentalhealth.well_bieng_guide.Anxiety.SQLite.Anxiety_DBHelper;
 import com.example.mentalhealth.well_bieng_guide.Model.DAYS;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 public class Anxiety_daysAdapter extends RecyclerView.Adapter<Anxiety_daysAdapter.myViewHolder> {
@@ -30,16 +28,16 @@ public class Anxiety_daysAdapter extends RecyclerView.Adapter<Anxiety_daysAdapte
     }
 
     @NonNull
-    @NotNull
+
     @Override
-    public Anxiety_daysAdapter.myViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public Anxiety_daysAdapter.myViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.res_days_listitem, null);
         myViewHolder holder = new myViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull myViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull  myViewHolder holder, int position) {
 
         Anxiety_DBHelper helper = new Anxiety_DBHelper(context);
         int day = helper.getDay();
@@ -87,7 +85,7 @@ public class Anxiety_daysAdapter extends RecyclerView.Adapter<Anxiety_daysAdapte
         TextView dayCount, dayTitle;
         RelativeLayout startDay;
 
-        public myViewHolder(@NonNull @NotNull View itemView) {
+        public myViewHolder(@NonNull  View itemView) {
             super(itemView);
 
             check = itemView.findViewById(R.id.res_LI_check);

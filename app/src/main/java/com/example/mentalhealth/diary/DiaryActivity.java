@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mentalhealth.MainActivity;
@@ -33,8 +33,8 @@ public class DiaryActivity extends AppCompatActivity implements View.OnClickList
         ButterKnife.bind(this);
 
         lst_note = findViewById(R.id.lst_note);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
-        lst_note.setLayoutManager(gridLayoutManager);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        lst_note.setLayoutManager(linearLayoutManager);
 
         DataItem();
 

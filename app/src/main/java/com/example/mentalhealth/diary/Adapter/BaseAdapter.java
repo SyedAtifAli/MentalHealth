@@ -82,38 +82,37 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseHolder> {
         int max = 10;
 
         //Generate random int value from 0 to 10
-        System.out.println("Random value in int from "+min+" to "+max+ ":");
         int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
 
         if(random_int == 0){
-            card_item_note.setCardBackgroundColor(Color.parseColor("#d7ccc8"));
+            card_item_note.setCardBackgroundColor(Color.parseColor("#fefefe"));
         }
         else if(random_int == 2){
-            card_item_note.setCardBackgroundColor(Color.parseColor("#ffccbc"));
+            card_item_note.setCardBackgroundColor(Color.parseColor("#ffcdd2"));
         }
         else if(random_int == 3){
-            card_item_note.setCardBackgroundColor(Color.parseColor("#ffe0b2"));
+            card_item_note.setCardBackgroundColor(Color.parseColor("#f9bbd0"));
         }
         else if(random_int == 4){
-            card_item_note.setCardBackgroundColor(Color.parseColor("#fff9c4"));
+            card_item_note.setCardBackgroundColor(Color.parseColor("#e1bee8"));
         }
         else if(random_int == 5){
-            card_item_note.setCardBackgroundColor(Color.parseColor("#b2ff59"));
+            card_item_note.setCardBackgroundColor(Color.parseColor("#bbdefa"));
         }
         else if(random_int == 6){
-            card_item_note.setCardBackgroundColor(Color.parseColor("#69f0ae"));
+            card_item_note.setCardBackgroundColor(Color.parseColor("#d7ccc8"));
         }
         else if(random_int == 7){
-            card_item_note.setCardBackgroundColor(Color.parseColor("#80d8ff"));
+            card_item_note.setCardBackgroundColor(Color.parseColor("#ffe0b2"));
         }
         else if(random_int == 8){
-            card_item_note.setCardBackgroundColor(Color.parseColor("#ff8a80"));
+            card_item_note.setCardBackgroundColor(Color.parseColor("#fffac3"));
         }
         else if(random_int == 9){
-            card_item_note.setCardBackgroundColor(Color.parseColor("#ff80ab"));
+            card_item_note.setCardBackgroundColor(Color.parseColor("#c8e6ca"));
         }
         else{
-            card_item_note.setCardBackgroundColor(Color.parseColor("#ea80fc"));
+            card_item_note.setCardBackgroundColor(Color.parseColor("#b2dfdc"));
         }
     }
 

@@ -15,8 +15,6 @@ import com.example.mentalhealth.R;
 import com.example.mentalhealth.well_bieng_guide.Loneliness.SQLite.loneliness_DBHelper;
 import com.example.mentalhealth.well_bieng_guide.Model.DAYS;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 public class Lon_daysAdapter extends RecyclerView.Adapter<Lon_daysAdapter.myViewHolder> {
@@ -30,15 +28,15 @@ public class Lon_daysAdapter extends RecyclerView.Adapter<Lon_daysAdapter.myView
     }
 
     @NonNull
-    @NotNull
+
     @Override
-    public Lon_daysAdapter.myViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public Lon_daysAdapter.myViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lon_days_listitem, null);
         return new myViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull myViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull  myViewHolder holder, int position) {
 
         loneliness_DBHelper helper = new loneliness_DBHelper(context);
         int day = helper.getDay();
@@ -82,7 +80,7 @@ public class Lon_daysAdapter extends RecyclerView.Adapter<Lon_daysAdapter.myView
         TextView dayCount, dayTitle;
         RelativeLayout startDay;
 
-        public myViewHolder(@NonNull @NotNull View itemView) {
+        public myViewHolder(@NonNull  View itemView) {
             super(itemView);
 
             check = itemView.findViewById(R.id.lon_LI_check);

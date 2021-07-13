@@ -51,40 +51,40 @@ public class SQLiteNote extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXIST " + TABLE_NOTE);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NOTE);
         onCreate(sqLiteDatabase);
     }
 
     public void addData(String waktu, String judul, String konten, String gambar, String lokasi) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-            if (!CheckData(judul)) {
-                ContentValues values = new ContentValues();
-                values.put(KEY_WAKTU, waktu);
-                values.put(KEY_JUDUL, judul);
-                values.put(KEY_KONTEN, konten);
-                values.put(KEY_GAMBAR, gambar);
-                values.put(KEY_LOKASI, lokasi);
+        if (!CheckData(judul)) {
+            ContentValues values = new ContentValues();
+            values.put(KEY_WAKTU, waktu);
+            values.put(KEY_JUDUL, judul);
+            values.put(KEY_KONTEN, konten);
+            values.put(KEY_GAMBAR, gambar);
+            values.put(KEY_LOKASI, lokasi);
 
-                db.insert(TABLE_NOTE, null, values);
-            } else {
-                try {
-                    db.beginTransaction();
-                    db.execSQL("UPDATE " + TABLE_NOTE +
-                            " SET waktu='" + waktu + "', judul='" + judul + "', konten='" + konten +
-                            "', gambar='" + gambar + "', lokasi='" + lokasi + "' WHERE judul='" + judul + "'");
-                    db.setTransactionSuccessful();
-                } finally {
-                    db.endTransaction();
-                }
+            db.insert(TABLE_NOTE, null, values);
+        } else {
+            try {
+                db.beginTransaction();
+                db.execSQL("UPDATE " + TABLE_NOTE +
+                        " SET waktu='" + waktu + "', judul='" + judul + "', konten='" + konten +
+                        "', gambar='" + gambar + "', lokasi='" + lokasi + "' WHERE judul='" + judul + "'");
+                db.setTransactionSuccessful();
+            } finally {
+                db.endTransaction();
             }
+        }
 
         db.close();
     }
 
     public List<ItemObject> getData() {
         List<ItemObject> usersdetail = new ArrayList<>();
-        String USER_DETAIL_SELECT_QUERY = "SELECT * FROM " + TABLE_NOTE;
+        String USER_DETAIL_SELECT_QUERY = "SELECT * FROM " + TABLE_NOTE + " order by _id desc;";
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery(USER_DETAIL_SELECT_QUERY, null);
         try {
@@ -113,7 +113,7 @@ public class SQLiteNote extends SQLiteOpenHelper {
         SQLiteDatabase sqldb = this.getReadableDatabase();
         String Query = "SELECT * FROM " + TABLE_NOTE + " WHERE judul='" + judul + "'";
         Cursor cursor = sqldb.rawQuery(Query, null);
-        if(cursor.getCount() <= 0){
+        if (cursor.getCount() <= 0) {
             cursor.close();
             return false;
         }

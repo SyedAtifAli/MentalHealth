@@ -1,6 +1,7 @@
 package com.example.mentalhealth;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -34,20 +35,24 @@ public class MainActivity extends AppCompatActivity {
      bottomNavigationView.setElevation(0);
 
         BottomNavigationItem bottomNavigationItem1 = new BottomNavigationItem
-                ("Home", ContextCompat.getColor(this, R.color.firstcolor), R.drawable.ic_home);
+                ("Home", ContextCompat.getColor(this, R.color.white), R.drawable.ic_home);
         BottomNavigationItem bottomNavigationItem2 = new BottomNavigationItem
-                ("Activity", ContextCompat.getColor(this, R.color.secondcolor), R.drawable.ic_games);
+                ("Activity", ContextCompat.getColor(this, R.color.white), R.drawable.ic_games);
         BottomNavigationItem bottomNavigationItem3 = new BottomNavigationItem
-                ("", ContextCompat.getColor(this, R.color.secondcolor), R.drawable.ic_games);
+                ("", ContextCompat.getColor(this, R.color.white), R.drawable.ic_games);
         BottomNavigationItem bottomNavigationItem4 = new BottomNavigationItem
-                ("Journal", ContextCompat.getColor(this, R.color.thirdcolor), R.drawable.ic_diary);
+                ("Journal", ContextCompat.getColor(this, R.color.white), R.drawable.ic_diary);
         BottomNavigationItem bottomNavigationItem5 = new BottomNavigationItem
-                ("Profile", ContextCompat.getColor(this, R.color.fourtholor), R.drawable.ic_profile);
+                ("Profile", ContextCompat.getColor(this, R.color.white), R.drawable.ic_profile);
         bottomNavigationView.addTab(bottomNavigationItem1);
         bottomNavigationView.addTab(bottomNavigationItem2);
         bottomNavigationView.addTab(bottomNavigationItem3);
         bottomNavigationView.addTab(bottomNavigationItem4);
         bottomNavigationView.addTab(bottomNavigationItem5);
+
+        bottomNavigationView.isColoredBackground(false);
+        bottomNavigationView.setItemActiveColorWithoutColoredBackground(Color.parseColor("#01BCD3"));
+
 
 
         bottomNavigationView.setOnBottomNavigationItemClickListener(new OnBottomNavigationItemClickListener() {

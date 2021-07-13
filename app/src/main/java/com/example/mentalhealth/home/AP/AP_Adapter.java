@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mentalhealth.R;
 import com.example.mentalhealth.diary.Adapter.BaseAdapter;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 public class AP_Adapter extends RecyclerView.Adapter<AP_Holder>{
@@ -27,16 +25,16 @@ public class AP_Adapter extends RecyclerView.Adapter<AP_Holder>{
     }
 
     @NonNull
-    @NotNull
+
     @Override
-    public AP_Holder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public AP_Holder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.additional_plan_listitem, null);
         AP_Holder holder = new AP_Holder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull AP_Holder holder, int position) {
+    public void onBindViewHolder(@NonNull  AP_Holder holder, int position) {
         holder.title.setText(object_list.get(position).title);
         holder.duration.setText(object_list.get(position).duration);
 //        holder.AP_wv.loadUrl("file:///android_asset/html_css/AP.html");
