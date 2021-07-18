@@ -57,6 +57,19 @@
         <activity
             android:name=".well_bieng_guide.SelfLove.Activity.Selflove_START"
             android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+        <activity
+            android:name=".well_bieng_guide.start.Start"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
+        <activity
+            android:name=".well_bieng_guide.start.Bullets"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".well_bieng_guide.start.Para"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".well_bieng_guide.start.WriteSomething"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
     </application>
 
 </manifest>

@@ -28,14 +28,14 @@ public class Anxiety_START extends AppCompatActivity {
         days.setLayoutManager(linearLayoutManager);
 
         List<DAYS> list = new ArrayList<>();
-        list.add(new DAYS("Day 1","Defining Anxiety"));
-        list.add(new DAYS("Day 2","Defining Anxiety"));
-        list.add(new DAYS("Day 3","Defining Anxiety"));
-        list.add(new DAYS("Day 4","Defining Anxiety"));
-        list.add(new DAYS("Day 5","Defining Anxiety"));
-        list.add(new DAYS("Day 6","Defining Anxiety"));
-        list.add(new DAYS("Day 7","Defining Anxiety"));
-        list.add(new DAYS("Day 8","Defining Anxiety"));
+        list.add(new DAYS("Day 1","Defining Anxiety","anx"));
+        list.add(new DAYS("Day 2","Guided Imagery","anx"));
+        list.add(new DAYS("Day 3","The Worry tree Tool","anx"));
+        list.add(new DAYS("Day 4","Cultivating Acceptance","anx"));
+        list.add(new DAYS("Day 5","Building Healthy Habits","anx"));
+        list.add(new DAYS("Day 6","Defining Anxiety","anx"));
+        list.add(new DAYS("Day 7","Defining Anxiety","anx"));
+        list.add(new DAYS("Day 8","Defining Anxiety","anx"));
 
         Anxiety_daysAdapter anxiety_daysAdapter = new Anxiety_daysAdapter(this,list);
         days.setAdapter(anxiety_daysAdapter);

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/template_background">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:cardCornerRadius="10dp"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/howhelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="How Will This Help?"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/how_help_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="11"
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:text="the new wave of the virus has come with its own set of challenges. If you're struggling to cope, know that you're not alone. We're here to help you build resilience and cope a little bit better."
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/how_help_nextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_background2"
+                    android:backgroundTint="@color/firstcolor"
+                    android:text="Next" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/how_help_cross"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="14dp"
+        android:rotation="45"
+        android:src="@drawable/ic_add"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/how_help_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:layout_toRightOf="@id/how_help_cross"
+        android:text="Defining Resilience"
+        android:textColor="@color/firstcolor"
+        android:textSize="30sp" />
+
+</RelativeLayout>

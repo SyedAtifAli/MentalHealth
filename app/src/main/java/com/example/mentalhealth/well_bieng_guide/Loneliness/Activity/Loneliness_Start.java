@@ -28,14 +28,14 @@ public class Loneliness_Start extends AppCompatActivity {
         days.setLayoutManager(linearLayoutManager);
 
         List<DAYS> list = new ArrayList<>();
-        list.add(new DAYS("Day 1","Defining Loneliness"));
-        list.add(new DAYS("Day 2","Defining Loneliness"));
-        list.add(new DAYS("Day 3","Defining Loneliness"));
-        list.add(new DAYS("Day 4","Defining Loneliness"));
-        list.add(new DAYS("Day 5","Defining Loneliness"));
-        list.add(new DAYS("Day 6","Defining Loneliness"));
-        list.add(new DAYS("Day 7","Defining Loneliness"));
-        list.add(new DAYS("Day 8","Defining Loneliness"));
+        list.add(new DAYS("Day 1","Beliefs About Alone Time","lon"));
+        list.add(new DAYS("Day 2","The Reconnection Effect","lon"));
+        list.add(new DAYS("Day 3","Identifying Your Emotions","lon"));
+        list.add(new DAYS("Day 4","Loving-Kindness Practice","lon"));
+        list.add(new DAYS("Day 5","Staying Connected","lon"));
+        list.add(new DAYS("Day 6","Defining Loneliness","lon"));
+        list.add(new DAYS("Day 7","Defining Loneliness","lon"));
+        list.add(new DAYS("Day 8","Defining Loneliness","lon"));
 
         Lon_daysAdapter lon_daysAdapter = new Lon_daysAdapter(this,list);
         days.setAdapter(lon_daysAdapter);

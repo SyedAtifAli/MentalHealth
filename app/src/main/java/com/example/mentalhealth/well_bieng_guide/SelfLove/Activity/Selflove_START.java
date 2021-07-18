@@ -28,14 +28,14 @@ public class Selflove_START extends AppCompatActivity {
         days.setLayoutManager(linearLayoutManager);
 
         List<DAYS> list = new ArrayList<>();
-        list.add(new DAYS("Day 1","Defining Self Love"));
-        list.add(new DAYS("Day 2","Defining Self Love"));
-        list.add(new DAYS("Day 3","Defining Self Love"));
-        list.add(new DAYS("Day 4","Defining Self Love"));
-        list.add(new DAYS("Day 5","Defining Self Love"));
-        list.add(new DAYS("Day 6","Defining Self Love"));
-        list.add(new DAYS("Day 7","Defining Self Love"));
-        list.add(new DAYS("Day 8","Defining Self Love"));
+        list.add(new DAYS("Day 1","Exploring Self-Love","selflove"));
+        list.add(new DAYS("Day 2","A Letter of Self-Love","selflove"));
+        list.add(new DAYS("Day 3","Self-Love Meditation","selflove"));
+        list.add(new DAYS("Day 4","Self-Love Beliefs","selflove"));
+        list.add(new DAYS("Day 5","Forgiveness Reflection","selflove"));
+        list.add(new DAYS("Day 6","Accepting Imperfections","selflove"));
+        list.add(new DAYS("Day 7","Defining Self Love","selflove"));
+        list.add(new DAYS("Day 8","Defining Self Love","selflove"));
 
         Selflove_daysAdapter selflove_daysAdapter = new Selflove_daysAdapter(this,list);
         days.setAdapter(selflove_daysAdapter);

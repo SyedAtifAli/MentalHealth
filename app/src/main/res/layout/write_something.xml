@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/write_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="14dp"
+            app:srcCompat="@drawable/ic_arrow_back_white"
+            app:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/write_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/write_back"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:textAlignment="center"
+            android:text="What does resilience means to you?\nWe'd love to know!"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:text="You could define reilience as:\n1. Overcoming problems\n2. Adapting to change\n3. Helping others in crisis\n4. Bouncing back from challenges"
+            android:layout_below="@id/write_title"
+            android:textSize="16sp"
+            android:id="@+id/write_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:hint="Write your defination here"
+            android:layout_below="@id/write_content"
+            android:id="@+id/write_et"/>
+
+
+        <Button
+            android:id="@+id/write_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_background2"
+            android:text="next"
+            android:textColor="@color/white"
+            app:backgroundTint="@null" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

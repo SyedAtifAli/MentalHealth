@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/para_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="14dp"
+            app:srcCompat="@drawable/ic_arrow_back_white"
+            app:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/para_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/para_back"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:text="Understanding Resilience"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/para_next"
+            android:layout_margin="14dp"
+            android:layout_below="@id/para_title">
+
+            <TextView
+                android:id="@+id/para_content"
+                android:text="@string/para_res_1"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+
+        <Button
+            android:id="@+id/para_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_background2"
+            android:text="next"
+            android:textColor="@color/white"
+            app:backgroundTint="@null" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

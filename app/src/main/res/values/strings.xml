@@ -2,4 +2,31 @@
     <string name="app_name">Mentalhealth</string>
     <string name="this_is_ur_moment">This is your moment to have a fresh start. Make the most of all that the new year has to offer with our free courses</string>
     <string name="more_courses_will_be">More courses will be getting added with each new update of the app!</string>
+    <string name="bds"><b>bds</b></string>
+    <string name="para_res_1"><b>The 3 C's of resilience</b><br /><br />In psychology, resilience is defined as the ability to adapt well in the face of adversity, trauma, tragedy, threats and significant sources of stress. According to the psycologist Susan Kobasa, there are 3 elements that are necessary to cultivate resilience, namely-challenge, commitment and control.
+    <br /><br /><b>Element 1: Challenge</b><br /><br />According to the first element, resilience involves
+not getting paralysed in the face of adversity. It
+means shifting your perspective to look at setbacks
+as a challenge that can be overcome. Being resilient
+means approaching challenges with an open mind,
+looking at failures as lessons, and considering
+obstacles as opportunities for personal growth.
+    <br /><br /><br /><b>Element 2: Commitment</b><br /><br />
+    The second element emphasises the fact that
+resilience involves having a high sense of
+commitment. It means having deep and meaningful
+relationships with others which will motivate you
+to move forward. Essentially, your commitment and
+care will encourage you to keep going even when
+faced with adversities.
+         <br /><br /><br /><b>Element 3: Control</b><br /><br />
+        And finally, the last element denotes that resilience
+means focusing your time and energy on situations
+you have control over. Instead of worrying about
+what you cannot change or don't have control over,
+you work towards things that are controllable.
+By doing so, you will feel more confident and
+empowered to take on any challenges.
+
+</string>
 </resources>
