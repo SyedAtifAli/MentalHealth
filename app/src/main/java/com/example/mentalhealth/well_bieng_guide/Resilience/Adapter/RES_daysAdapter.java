@@ -51,6 +51,18 @@ public class RES_daysAdapter extends RecyclerView.Adapter<RES_daysAdapter.myView
             holder.dayCount.setText(list.get(position).getDay());
             holder.dayTitle.setText(list.get(position).getTitle());
             holder.startDay.setVisibility(View.VISIBLE);
+            holder.startDay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, Start.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("course","res");
+                    intent.putExtra("day",list.get(position).getDay());
+                    intent.putExtra("title",list.get(position).getTitle());
+                    context.startActivity(intent);
+
+                }
+            });
 
         } else if (position == day) {
             holder.dayCount.setText(list.get(position).getDay());
@@ -66,7 +78,6 @@ public class RES_daysAdapter extends RecyclerView.Adapter<RES_daysAdapter.myView
                     intent.putExtra("title",list.get(position).getTitle());
                     Log.d("abcde", "res"+" "+list.get(position).getDay()+ " "+list.get(position).getTitle());
                     context.startActivity(intent);
-//                    helper.saveDay(position + 1);
 
                 }
             });

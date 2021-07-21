@@ -11,7 +11,7 @@
 
 
         <ImageView
-            android:id="@+id/write_back"
+            android:id="@+id/ww_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="14dp"
@@ -21,10 +21,10 @@
             app:tint="@color/black" />
 
         <TextView
-            android:id="@+id/write_title"
+            android:id="@+id/ww_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/write_back"
+            android:layout_below="@id/ww_back"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="14dp"
             android:layout_marginRight="14dp"
@@ -37,22 +37,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:text="You could define reilience as:\n1. Overcoming problems\n2. Adapting to change\n3. Helping others in crisis\n4. Bouncing back from challenges"
-            android:layout_below="@id/write_title"
+            android:text="My defination of resilience"
+            android:textColor="@color/thirdcolor"
+            android:layout_below="@id/ww_title"
             android:textSize="16sp"
-            android:id="@+id/write_content"/>
-
-        <EditText
+            android:id="@+id/ww_content"/>
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:textSize="16sp"
+            android:id="@+id/ww_answer"
+            android:textStyle="bold"
+            android:text="Bouncing back from challenges"
+            android:layout_below="@id/ww_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ww_answer"
             android:layout_margin="14dp"
-            android:hint="Write your defination here"
-            android:layout_below="@id/write_content"
-            android:id="@+id/write_et"/>
+            android:text="@string/res_day_1_whatwritten_suggest"
+            android:textSize="16sp"
+            android:id="@+id/ww_suggest"/>
+
+
+
 
 
         <Button
-            android:id="@+id/write_nxt"
+            android:id="@+id/ww_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

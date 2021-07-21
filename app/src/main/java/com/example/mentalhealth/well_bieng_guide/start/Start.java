@@ -47,8 +47,8 @@ public class Start extends AppCompatActivity {
             if(day.equals("Day 1")){
                 return "the new wave of the virus has come with its own set of challenges. If you're struggling to cope, know that you're not alone. We're here to help you build resilience and cope a little bit better.";
             }
-            if(day.equals("Day 2")){
-                return "blahblah";
+            else if(day.equals("Day 2")){
+                return "In difficult times, do you tend to focus more on your weaknesses? Today's activity will help change that! Learn how to recognise your strengths, so you can build resilience in the face of distress.";
             }
         }
         else if(course.equals("anx")){
@@ -67,6 +67,9 @@ public class Start extends AppCompatActivity {
         if(course.equals("res")){
             if(day.equals("Day 1")){
                 return "Understanding what resilience means will hep you identify and implement stategies to build resilience in your own life. This can even better prepare you to deal with any challenges you encounter.";
+            }
+            else if(day.equals("Day 2")){
+                return "Resilence is the ability to recover from challenges. Identifying and nurturing your strengths can help you build the confidence to fight through difficult situations when they arise";
             }
         }
         return "";

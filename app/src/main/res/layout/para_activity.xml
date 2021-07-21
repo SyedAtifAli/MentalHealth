@@ -28,7 +28,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="14dp"
             android:layout_marginRight="14dp"
-            android:text="Understanding Resilience"
+            android:text="Understanding"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -37,13 +37,14 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/para_next"
             android:layout_margin="14dp"
+            android:overScrollMode="never"
             android:layout_below="@id/para_title">
 
             <TextView
                 android:id="@+id/para_content"
-                android:text="@string/para_res_1"
                 android:textColor="@color/black"
                 android:textSize="16sp"
+                android:text="jfakhfeuefq"
                 android:fontFamily="@font/roboto_light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

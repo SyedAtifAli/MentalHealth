@@ -11,7 +11,7 @@
 
 
         <ImageView
-            android:id="@+id/write_back"
+            android:id="@+id/sug_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="14dp"
@@ -21,38 +21,31 @@
             app:tint="@color/black" />
 
         <TextView
-            android:id="@+id/write_title"
+            android:id="@+id/sug_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/write_back"
+            android:layout_below="@id/sug_back"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="14dp"
             android:layout_marginRight="14dp"
             android:textAlignment="center"
-            android:text="What does resilience means to you?\nWe'd love to know!"
+            android:text="Take a closer look at resilience and how you can build it..."
             android:textColor="@color/black"
             android:textSize="20sp" />
 
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:text="You could define reilience as:\n1. Overcoming problems\n2. Adapting to change\n3. Helping others in crisis\n4. Bouncing back from challenges"
-            android:layout_below="@id/write_title"
+            android:layout_below="@id/sug_title"
             android:textSize="16sp"
-            android:id="@+id/write_content"/>
+            android:id="@+id/sug_rv"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="14dp"
-            android:hint="Write your defination here"
-            android:layout_below="@id/write_content"
-            android:id="@+id/write_et"/>
+
 
 
         <Button
-            android:id="@+id/write_nxt"
+            android:id="@+id/sug_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

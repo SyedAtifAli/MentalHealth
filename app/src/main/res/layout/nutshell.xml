@@ -8,8 +8,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="10dp"
+        android:layout_centerInParent="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,37 +17,37 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/howhelp"
+                android:id="@+id/nutshell"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="How Will This Help?"
+                android:text="In a nutshell..."
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/how_help_content"
+                android:id="@+id/nutshell_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="11"
+                android:textSize="16sp"
                 android:padding="10dp"
                 android:text="the new wave of the virus has come with its own set of challenges. If you're struggling to cope, know that you're not alone. We're here to help you build resilience and cope a little bit better."
-                android:textSize="16sp" />
-
+                />
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/how_help_nextButton"
+                    android:id="@+id/nutshell_nextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/button_background2"
-                    android:text="Next"
-                    app:backgroundTint="@null" />
+                    app:backgroundTint="@null"
+                    android:text="Next" />
             </RelativeLayout>
 
 
@@ -55,7 +55,7 @@
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:id="@+id/how_help_cross"
+        android:id="@+id/nutshell_cross"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_margin="14dp"
@@ -64,13 +64,13 @@
         app:tint="@color/black" />
 
     <TextView
-        android:id="@+id/how_help_title"
+        android:id="@+id/nutshell_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_margin="14dp"
         android:text="Defining Resilience"
         android:textColor="@color/thirdcolor"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

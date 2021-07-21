@@ -48,15 +48,15 @@
 
         <activity
             android:name=".well_bieng_guide.Loneliness.Activity.Loneliness_Start"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
 
         <activity
             android:name=".well_bieng_guide.Anxiety.Activity.Anxiety_START"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
 
         <activity
             android:name=".well_bieng_guide.SelfLove.Activity.Selflove_START"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".well_bieng_guide.start.Start"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
@@ -69,6 +69,20 @@
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".well_bieng_guide.start.WriteSomething"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
+        <activity
+            android:name=".well_bieng_guide.start.suggestions"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".well_bieng_guide.start.nutshell"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
+        <activity
+            android:name=".well_bieng_guide.start.Whatwritten"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".well_bieng_guide.start.rate_activity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
     </application>
 

@@ -8,11 +8,16 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mentalhealth.MainActivity;
 import com.example.mentalhealth.R;
 import com.example.mentalhealth.well_bieng_guide.Anxiety.Activity.Anxiety_START;
 import com.example.mentalhealth.well_bieng_guide.Loneliness.Activity.Loneliness_Start;
 import com.example.mentalhealth.well_bieng_guide.Resilience.Activity.RES_START;
 import com.example.mentalhealth.well_bieng_guide.SelfLove.Activity.Selflove_START;
+import com.wajahatkarim3.easyflipview.EasyFlipView;
+
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
+import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 public class Well_Being_Activity extends AppCompatActivity {
 
@@ -55,5 +60,34 @@ public class Well_Being_Activity extends AppCompatActivity {
             }
         });
 
+        EasyFlipView easyFlipView = findViewById(R.id.showcase_1);
+
+        ShowcaseConfig config = new ShowcaseConfig();
+        config.setDelay(500); // half second between each showcase view
+
+
+        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this, "wellbeing");
+
+        sequence.setConfig(config);
+
+        sequence.addSequenceItem(easyFlipView,
+                "Introducing your very own 2021 well-being guid\nTap on the cards to know the details.", "GOT IT");
+
+        sequence.addSequenceItem(resilience,
+                "Click on the name of the course to start it.", "GOT IT");
+
+
+        sequence.start();
+
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(Well_Being_Activity.this, MainActivity.class);
+        startActivity(intent);
+        finishAffinity();
     }
 }

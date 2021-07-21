@@ -70,11 +70,22 @@ public class How_help_fragment extends Fragment {
 
                 }
                 else if(flag == 2){
-                    Intent intent = new Intent(context,Bullets.class);
-                    intent.putExtra("title",title);
-                    intent.putExtra("course",course);
-                    intent.putExtra("day",day);
-                    startActivity(intent);
+                    if(course.equals("res")){
+                        if(day.equals("Day 1")){
+                            Intent intent = new Intent(context,Bullets.class);
+                            intent.putExtra("title",title);
+                            intent.putExtra("course",course);
+                            intent.putExtra("day",day);
+                            startActivity(intent);
+                        }
+                        else if(day.equals("Day 2")){
+                            Intent intent = new Intent(context,Para.class);
+                            intent.putExtra("course",course);
+                            intent.putExtra("day",2);
+                            startActivity(intent);
+                        }
+                    }
+
                 }
             }
         });
