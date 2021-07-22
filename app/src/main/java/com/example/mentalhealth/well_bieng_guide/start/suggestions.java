@@ -53,6 +53,25 @@ public class suggestions extends AppCompatActivity {
                     }
                 });
             }
+            else if(day == 3){
+                List<bulletsModel> list = new ArrayList<>();
+                list.add(new bulletsModel("These are the people you have identified as someone you can lean on."));
+                list.add(new bulletsModel("Spend some time reconnecting with them."));
+                list.add(new bulletsModel("give them a call or send them a message - and nurture your relationship."));
+
+                BulletAdapter adapter = new BulletAdapter(list, this);
+                recyclerView.setAdapter(adapter);
+
+                next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent= new Intent(suggestions.this,nutshell.class);
+                        intent.putExtra("course", "res");
+                        intent.putExtra("day", 3);
+                        startActivity(intent);
+                    }
+                });
+            }
         }
     }
 }

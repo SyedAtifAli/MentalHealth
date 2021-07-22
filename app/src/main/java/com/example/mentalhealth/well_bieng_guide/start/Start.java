@@ -50,6 +50,9 @@ public class Start extends AppCompatActivity {
             else if(day.equals("Day 2")){
                 return "In difficult times, do you tend to focus more on your weaknesses? Today's activity will help change that! Learn how to recognise your strengths, so you can build resilience in the face of distress.";
             }
+            else if(day.equals("Day 3")){
+                return "Having people who you can lean on during difficult times improves your coping ability. Today's activity will help you recognise the people in your life who you can lean on";
+            }
         }
         else if(course.equals("anx")){
 
@@ -70,6 +73,9 @@ public class Start extends AppCompatActivity {
             }
             else if(day.equals("Day 2")){
                 return "Resilence is the ability to recover from challenges. Identifying and nurturing your strengths can help you build the confidence to fight through difficult situations when they arise";
+            }
+            else if(day.equals("Day 3")){
+                return "";
             }
         }
         return "";

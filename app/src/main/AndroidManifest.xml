@@ -84,6 +84,11 @@
         <activity
             android:name=".well_bieng_guide.start.rate_activity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
+        <activity android:name=".well_bieng_guide.start.drag_list"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity android:name=".well_bieng_guide.start.drag_select"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
     </application>
 
 </manifest>

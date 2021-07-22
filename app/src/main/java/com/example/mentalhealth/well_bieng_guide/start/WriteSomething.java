@@ -16,6 +16,9 @@ import com.example.mentalhealth.R;
 public class WriteSomething extends AppCompatActivity {
 
     String def;
+    String sad, pep, lonely, advice;
+    int flag = 1;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,8 +56,73 @@ public class WriteSomething extends AppCompatActivity {
                         }
                     }
 
-            });
+                });
+            } else if (day == 3) {
+                editText.setHint("who is that person?");
+                if (flag == 1) {
+                    title.setText("Who do you talk to when you feel sad or upset? ");
+                    content.setText("Think about who this person is");
+                    nxt.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (editText.getText().toString().trim().isEmpty()) {
+                                Toast.makeText(WriteSomething.this, "You haven't answered the question.", Toast.LENGTH_SHORT).show();
+                            } else {
+                                sad = editText.getText().toString().trim();
+                                editText.getText().clear();
+                                title.setText("Who gives you the best pep talks to boost your confidence? ");
+                                content.setText("Think about who this person is");
+                                nxt.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        if (editText.getText().toString().trim().isEmpty()) {
+                                            Toast.makeText(WriteSomething.this, "You haven't answered the question.", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            pep = editText.getText().toString().trim();
+                                            editText.getText().clear();
+                                            title.setText("Who reminds you that you're not alone when you feel lonely?");
+                                            content.setText("Think about who this person is");
+                                            nxt.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    if (editText.getText().toString().trim().isEmpty()) {
+                                                        Toast.makeText(WriteSomething.this, "You haven't answered the question.", Toast.LENGTH_SHORT).show();
+                                                    } else {
+                                                        lonely = editText.getText().toString().trim();
+                                                        editText.getText().clear();
+                                                        title.setText("Who do you always turn to for advice?");
+                                                        content.setText("Think about who this person is");
+                                                        nxt.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                if (editText.getText().toString().trim().isEmpty()) {
+                                                                    Toast.makeText(WriteSomething.this, "You haven't answered the question.", Toast.LENGTH_SHORT).show();
+                                                                } else {
+                                                                    advice = editText.getText().toString().trim();
+                                                                    editText.getText().clear();
+                                                                    Intent intent = new Intent(WriteSomething.this, Whatwritten.class);
+                                                                    intent.putExtra("course", "res");
+                                                                    intent.putExtra("day", 3);
+                                                                    intent.putExtra("sad", sad);
+                                                                    intent.putExtra("pep", pep);
+                                                                    intent.putExtra("lonely", lonely);
+                                                                    intent.putExtra("advice", advice);
+                                                                    startActivity(intent);
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+                                                }
+                                            });
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+
+            }
         }
     }
-}
 }

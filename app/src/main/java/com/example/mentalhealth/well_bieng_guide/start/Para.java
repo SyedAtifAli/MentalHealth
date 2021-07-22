@@ -114,6 +114,44 @@ public class Para extends AppCompatActivity {
 
 
             }
+            else if(day == 3){
+                title.setText("Why is it important to identify people you can lean on?");
+                content.setText( Html.fromHtml("<b>It helps you fell less lonely</b><br><br>" +
+                        "A person who Is surrounded by well-wishers may" +
+                        "still find themselves feeling lonely because they" +
+                        "don't feel connected to the people around them." +
+                        "Whereas, when you recognise that you have people" +
+                        "in your life who are supporting you, and who you" +
+                        "can connect to, you feel less lonely, even when you" +
+                        "are alone. <br><br>" +
+                        "<b>It makes life memorable </b><br><br>" +
+                        "All humans have a basic need for social connection." +
+                        "When you have loved ones around you during" +
+                        "happy moments it fulfils this need. It also enhances" +
+                        "the positive emotions you experience at such times" +
+                        "and makes feel warm and connected.<br><br>"+
+                        "<b>It helps you feel supported </b><br><br>"+
+                        "On the other hand, having loved ones supporting" +
+                        "you during a period of sadness or stress can help" +
+                        "you cope with the situation better, and protects you" +
+                        "against maladaptive behaviours. <br><br>"+
+                        "<b>It improves your health </b><br><br>"+
+                        "Poor social support has been linked to depression," +
+                        "alcohol use, and heart disease. Improving social" +
+                        "support has long term benefits on your health," +
+                        "immunity, and longevity. "));
+                next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Para.this,WriteSomething.class);
+                        intent.putExtra("course","res");
+                        intent.putExtra("day",3);
+                        startActivity(intent);
+                    }
+                });
+
+
+            }
         }
 
 

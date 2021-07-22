@@ -60,6 +60,58 @@ public class rate_activity  extends AppCompatActivity {
                 helper.close();
             }
         }
+         if(day == 2){
+            title.setText("Nurturing Strength");
+            yes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    helper.saveDay(day);
+                    Intent intent = new Intent(rate_activity.this, Well_Being_Activity.class);
+                    startActivity(intent);
+                    finishAffinity();
 
+                }
+            });
+            no.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    helper.saveDay(day);
+                    Intent intent = new Intent(rate_activity.this, Well_Being_Activity.class);
+                    startActivity(intent);
+                    finishAffinity();
+
+                }
+            });
+
+            helper.close();
+        }
+         if(day == 3){
+             title.setText("Your Social Support");
+             yes.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     helper.saveDay(day);
+                     Intent intent = new Intent(rate_activity.this, Well_Being_Activity.class);
+                     startActivity(intent);
+                     finishAffinity();
+
+                 }
+             });
+             no.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     helper.saveDay(day);
+                     Intent intent = new Intent(rate_activity.this, Well_Being_Activity.class);
+                     startActivity(intent);
+                     finishAffinity();
+
+                 }
+             });
+
+             helper.close();
+         }
+        else {
+            helper.close();
+        }
     }
 }

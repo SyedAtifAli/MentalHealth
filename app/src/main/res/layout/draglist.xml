@@ -11,37 +11,42 @@
 
 
         <ImageView
-            android:id="@+id/bullets_cross"
+            android:id="@+id/drag_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp"
             android:layout_marginTop="14dp"
-            android:rotation="45"
-            android:src="@drawable/ic_add"
+            android:layout_marginEnd="14dp"
+            app:srcCompat="@drawable/ic_arrow_back_white"
             app:tint="@color/black" />
 
         <TextView
-            android:id="@+id/bullet_title"
+            android:id="@+id/drag_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/bullets_cross"
+            android:layout_below="@id/drag_back"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="14dp"
             android:layout_marginRight="14dp"
-            android:text="abc"
+            android:text="Select the strength based on how frequently you use them"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/bullet_points_rv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/bullet_next"
-            android:layout_below="@id/bullet_title"
-            android:layout_margin="14dp" />
+
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/drag_title"
+                android:layout_above="@id/drag_next"
+                android:id="@+id/drag_list"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
 
         <Button
-            android:id="@+id/bullet_next"
+            android:id="@+id/drag_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

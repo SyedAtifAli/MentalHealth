@@ -39,6 +39,31 @@ public class nutshell extends AppCompatActivity {
                         intent.putExtra("course", "res");
                         intent.putExtra("day", 1);
                         startActivity(intent);
+                    }
+                });
+            }
+            else if(day == 2){
+                title.setText("Nurturing Strength");
+                content.setText("When difficulties arise, instead of getting bogged down, think of what strength you can use to address the situation. Take action to recognise what you're capable of to develop a resilient mindset");
+                next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(nutshell.this,rate_activity.class);
+                        intent.putExtra("course", "res");
+                        intent.putExtra("day", 2);
+                        startActivity(intent);
+                    }
+                });
+            }
+            else if (day == 3){
+                title.setText("Your Social Support");
+                content.setText("The next time you feel stressed and don't know how to move forward from a situation, come back to this list and ask for help from the people you identified as your support system." );
+                        next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(nutshell.this,rate_activity.class);
+                        intent.putExtra("course", "res");
+                        intent.putExtra("day", 3);
                         startActivity(intent);
                     }
                 });
