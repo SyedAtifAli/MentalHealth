@@ -1,6 +1,7 @@
 package com.example.mentalhealth.well_bieng_guide.SelfLove.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mentalhealth.R;
 import com.example.mentalhealth.well_bieng_guide.Model.DAYS;
 import com.example.mentalhealth.well_bieng_guide.SelfLove.SQLite.Selflove_DBHelper;
+import com.example.mentalhealth.well_bieng_guide.start.Start;
 
 import java.util.List;
 
@@ -48,7 +50,17 @@ public class Selflove_daysAdapter extends RecyclerView.Adapter<Selflove_daysAdap
             holder.dayCount.setText(list.get(position).getDay());
             holder.dayTitle.setText(list.get(position).getTitle());
             holder.startDay.setVisibility(View.VISIBLE);
-
+            holder.startDay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, Start.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("course","self");
+                    intent.putExtra("day",list.get(position).getDay());
+                    intent.putExtra("title",list.get(position).getTitle());
+                    context.startActivity(intent);
+                }
+            });
         }
 
         else if(position == day) {
@@ -58,8 +70,12 @@ public class Selflove_daysAdapter extends RecyclerView.Adapter<Selflove_daysAdap
             holder.startDay.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    helper.saveDay(position+1);
-
+                    Intent intent = new Intent(context, Start.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("course","self");
+                    intent.putExtra("day",list.get(position).getDay());
+                    intent.putExtra("title",list.get(position).getTitle());
+                    context.startActivity(intent);
                 }
             });
         }
