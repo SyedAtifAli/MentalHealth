@@ -30,11 +30,11 @@
 
                 <TextView
                     android:id="@+id/AP_item_title"
-                    android:layout_width="79dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/alatsi"
                     android:maxLines="3"
-                    android:text="Foundation Course for anxiety"
+                    android:text="Overcome\nOverthinking"
                     android:textColor="#212121" />
 
                 <TextView

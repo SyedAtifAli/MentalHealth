@@ -1,5 +1,6 @@
 package com.example.mentalhealth.well_bieng_guide.start;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.example.mentalhealth.well_bieng_guide.Resilience.SQLite.Resilience_DB
 import com.example.mentalhealth.well_bieng_guide.Well_Being_Activity;
 
 public class rate_activity  extends AppCompatActivity {
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(@Nullable  Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

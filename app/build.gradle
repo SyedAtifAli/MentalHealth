@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 
@@ -14,7 +15,6 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -38,12 +38,28 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.navigation:navigation-fragment:2.3.5'
     implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation files('libs/Ab.jar')
+
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+
+    //time picker
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+
+    //Biometrics
+    implementation 'androidx.biometric:biometric:1.0.0-alpha03'
+
+    // GoogleSignInClient
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+
+    // Worm dots indicator
+    implementation 'com.tbuonomo:dotsindicator:4.2'
+
 
     //visit https://github.com/armcha/LuseenBottomNavigation
     implementation 'com.github.armcha:LuseenBottomNavigation:1.8.2'
@@ -53,7 +69,7 @@ dependencies {
     implementation 'com.github.sujithkanna:smileyrating:1.6.8'
 
     //kotlin
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.31"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.31"
 
     //circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'

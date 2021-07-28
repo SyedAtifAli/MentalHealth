@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 
     <application
         android:allowBackup="true"
@@ -15,15 +16,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mentalhealth">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".Login_SignUp.Splash"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".diary.AddActivity" />
+        <activity
+            android:name=".diary.AddActivity"
+            android:theme="@style/MyTheme" />
+
+        <activity
+            android:name=".fragments.ProfileFragment"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
         <activity android:name=".diary.DiaryActivity" />
+
         <activity
             android:name=".well_bieng_guide.Well_Being_Activity"
             android:theme="@style/Theme.MaterialComponents.NoActionBar" />
@@ -85,10 +96,44 @@
             android:name=".well_bieng_guide.start.rate_activity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
 
-        <activity android:name=".well_bieng_guide.start.drag_list"
+        <activity
+            android:name=".well_bieng_guide.start.drag_list"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
-        <activity android:name=".well_bieng_guide.start.drag_select"
+        <activity
+            android:name=".well_bieng_guide.start.drag_select"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".Login_SignUp.LoginActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
+        <activity
+            android:name=".Login_SignUp.OnBoardingScreen"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
+        <activity
+            android:name=".Login_SignUp.SignUp"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/MyTheme" />
+
+        <activity android:name=".Reminders.Reminder"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+        <activity android:name=".Reminders.AddReminderActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+
+        <provider
+            android:name=".Reminders.data.AlarmReminderProvider"
+            android:authorities="com.mentalhealth.alarmreminder"
+            android:exported="false" />
+
+        <service
+            android:name=".Reminders.reminder.ReminderAlarmService"
+            android:exported="false" />
+
     </application>
+
+
 
 </manifest>

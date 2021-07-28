@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "474341955761",
+    "project_id": "mentalhealth-be2bc",
+    "storage_bucket": "mentalhealth-be2bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474341955761:android:c48ab33d845f8d15aaaa90",
+        "android_client_info": {
+          "package_name": "com.atif.mentalhealth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474341955761-p31gr4s0phdv4jn6oibnd8tr4b4bt2vs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.atif.mentalhealth",
+            "certificate_hash": "5a5de0d03830e05b1561cd5990b5c5314a251c62"
+          }
+        },
+        {
+          "client_id": "474341955761-np1hmc30eg23vk71r2hjndd5k9j1fpvo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_b2sg5BTusVl6_g9je3BU63iMPkrekJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474341955761-np1hmc30eg23vk71r2hjndd5k9j1fpvo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

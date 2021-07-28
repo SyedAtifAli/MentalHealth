@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lst_note"
         android:layout_width="match_parent"
@@ -11,12 +12,12 @@
         android:padding="3dp" />
 
     <TextView
+        android:id="@+id/empty_diary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/empty_diary"
-        android:visibility="gone"
+        android:layout_centerInParent="true"
         android:text="You don't have any journal entries!\nclick on the + button to make some"
-        android:layout_centerInParent="true"/>
+        android:visibility="gone" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -31,5 +32,47 @@
         android:src="@android:drawable/ic_input_add"
         app:tint="@color/white" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#661fff"
+        android:id="@+id/hmm_layout"
+        android:visibility="gone">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/hmm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="200dp"
+                android:fontFamily="@font/alatsi"
+                android:text="Hmm..."
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hmm"
+                android:layout_marginLeft="80dp"
+                android:textColor="@color/white"
+                android:id="@+id/mistake"
+                android:text="Looks like you are not the rightful\nowner of the journal.\n\n\nAre we mistaken?"/>
+            <Button
+                android:layout_width="130dp"
+                android:text="Try Again!"
+                android:layout_below="@id/mistake"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:textSize="14sp"
+                android:layout_height="40dp"
+                android:id="@+id/tryagain"/>
+
+        </RelativeLayout>
+    </FrameLayout>
 </RelativeLayout>

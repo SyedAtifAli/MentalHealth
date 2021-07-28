@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/nav_rate"
+            android:icon="@drawable/star_black"
+            android:title="Rate Us" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_share_black"
+            android:title="Share App" />
+        <!--            <item-->
+        <!--                android:id="@+id/nav_settings"-->
+        <!--                android:icon="@drawable/ic_settings_black"-->
+        <!--                android:title="Settings" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_reminders"-->
+<!--            android:icon="@drawable/ic_activities"-->
+<!--            android:title="Reminders" />-->
+        <!--            <item-->
+        <!--                android:id="@+id/nav_pin"-->
+        <!--                android:icon="@drawable/ic_lock_black"-->
+        <!--                android:title="Security Pin" />-->
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_ask"
+                android:icon="@drawable/ic_help_black"
+                android:title="Ask a question" />
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/ic_reviews_black"
+                android:title="Feedback" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout_black"
+                android:title="Log Out" />
+        </menu>
+    </item>
+
+</menu>

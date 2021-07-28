@@ -34,4 +34,27 @@
 
 <!--</string>-->
     <string name="res_day_1_whatwritten_suggest">Take a moment to think about what you\'ve written above. Reflect on how carving out your own defination of resilience makes you feel. Also, think about how you can strengthen your skill of resilience.</string>
+    <string name="log_in">Log In</string>
+    <string name="not_a_user_sign_up">Not a User? Sign Up</string>
+    <string name="forgotpass">Forgot Password</string>
+    <string name="auth">Authenticate with fingerprint</string>
+    <!--    <string name="default_web_client_id">869015951740-pcjm7b4cn1uhkajsj46sqig5ovjdcnn9.apps.googleusercontent.com</string>-->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="nav_open">open_nav</string>
+    <string name="nav_close">close_nav</string>
+    <string name="add_reminder">Add Reminder Title</string>
+    <string name="details">Details</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="repeat">Repeat</string>
+    <string name="repeat_no">Repeat No.</string>
+    <string name="repeat_type">Repeat Type</string>
+    <string name="reminder_title">Yoga Reminder</string>
+    <string name="editor_insert_reminder_failed">Error with saving reminder</string>
+    <string name="editor_insert_reminder_successful">Reminder saved</string>
+    <string name="editor_update_reminder_failed">Error with updating reminder</string>
+    <string name="editor_update_reminder_successful">Reminder updated</string>
+    <string name="repeat_off">Repeat Off</string>
 </resources>

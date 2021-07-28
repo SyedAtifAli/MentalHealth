@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +20,7 @@ import com.example.mentalhealth.home.AP.AP_Objects;
 import com.example.mentalhealth.home.Activities.RA_Adapter;
 import com.example.mentalhealth.home.Activities.RA_Objects;
 import com.example.mentalhealth.well_bieng_guide.Well_Being_Activity;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.hsalf.smilerating.BaseRating;
 import com.hsalf.smilerating.SmileRating;
@@ -41,19 +43,19 @@ public class HomeFragment extends Fragment {
         AP = v.findViewById(R.id.additional_plans_rv);
         AP.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
-        List<AP_Objects> list  = new ArrayList<>();
-        list.add(new AP_Objects("Foundation Course for Anxi..","5 days"));
-        list.add(new AP_Objects("Course for Stress","10 days"));
-        list.add(new AP_Objects("Foundations of Anger M..","4 days"));
-        list.add(new AP_Objects("Overcome OverThinking","3 days"));
-        list.add(new AP_Objects("Cognitive Dissonance? No More","5 days"));
-        AP_Adapter ap_adapter = new AP_Adapter(getContext() , list);
+        List<AP_Objects> list = new ArrayList<>();
+        list.add(new AP_Objects("Foundation Course for Anxity", "6 days"));
+        list.add(new AP_Objects("Stress\nManagement", "6 days"));
+        list.add(new AP_Objects("Foundation of Anger\nManagement", "6 days"));
+        list.add(new AP_Objects("Overcome\nOverThinking", "6 days"));
+        list.add(new AP_Objects("Cognitive Dissonance? No More", "6 days"));
+        AP_Adapter ap_adapter = new AP_Adapter(getContext(), list);
         AP.setAdapter(ap_adapter);
 
         RA = v.findViewById(R.id.recomended_act_rv);
         RA.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
-        List<RA_Objects> list1  = new ArrayList<>();
+        List<RA_Objects> list1 = new ArrayList<>();
         list1.add(new RA_Objects("Deep Breathing"));
         list1.add(new RA_Objects("Guided Imagery"));
         list1.add(new RA_Objects("PMR"));
@@ -67,8 +69,19 @@ public class HomeFragment extends Fragment {
         list1.add(new RA_Objects("Running"));
         list1.add(new RA_Objects("Cycling"));
         list1.add(new RA_Objects("Skipping Ropes"));
-        RA_Adapter ra_adapter = new RA_Adapter(getContext() , list1);
+        RA_Adapter ra_adapter = new RA_Adapter(getContext(), list1);
         RA.setAdapter(ra_adapter);
+
+        MaterialButton allAct = v.findViewById(R.id.view_all_act);
+        allAct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.container, new GamesFragment(), "NewFragmentTag");
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
 
         SmileRating smileRating = (SmileRating) v.findViewById(R.id.smiley);
         smileRating.setSelectedSmile(BaseRating.GOOD);
@@ -102,7 +115,7 @@ public class HomeFragment extends Fragment {
         WB_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext() , Well_Being_Activity.class);
+                Intent intent = new Intent(getContext(), Well_Being_Activity.class);
                 startActivity(intent);
             }
         });

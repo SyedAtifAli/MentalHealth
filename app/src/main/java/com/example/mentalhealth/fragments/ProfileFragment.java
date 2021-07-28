@@ -2,32 +2,50 @@ package com.example.mentalhealth.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mentalhealth.Profile.Edit_profile_act;
 import com.example.mentalhealth.R;
+import com.example.mentalhealth.SaveSharedPreference;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends AppCompatActivity {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_profile, null);
+    protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
 
-        ImageView edit = v.findViewById(R.id.edit_profile);
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_profile);
+
+        String naam = "user198";
+
+        TextView name = findViewById(R.id.profile_name);
+
+        if (FirebaseAuth.getInstance().getCurrentUser().getDisplayName() != null) {
+            naam = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
+            SaveSharedPreference.setUser(this, FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+        } else {
+            naam = SaveSharedPreference.getUserName(this);
+        }
+
+        name.setText(naam);
+
+        ImageView edit = findViewById(R.id.edit_profile);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), Edit_profile_act.class);
+                Intent intent = new Intent(ProfileFragment.this, Edit_profile_act.class);
                 startActivity(intent);
             }
         });
 
-        return v;
     }
+
+
 }
