@@ -27,7 +27,7 @@ public class OnBoardingScreen extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (SaveSharedPreference.getRef(this)) {
-            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(this, SignUp.class));
             finish();
         }
         setContentView((int) R.layout.activity_on_boarding_screenm);
@@ -73,7 +73,7 @@ public class OnBoardingScreen extends AppCompatActivity {
             public void onClick(View view) {
                 if (OnBoardingScreen.this.currentPage == OnBoardingScreen.this.layouts.length - 1) {
                     SaveSharedPreference.setRef(OnBoardingScreen.this, true);
-                    OnBoardingScreen.this.startActivity(new Intent(OnBoardingScreen.this, LoginActivity.class));
+                    OnBoardingScreen.this.startActivity(new Intent(OnBoardingScreen.this, SignUp.class));
                     OnBoardingScreen.this.finish();
                     return;
                 }

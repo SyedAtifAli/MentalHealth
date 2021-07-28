@@ -9,23 +9,35 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mentalhealth.MainActivity;
 import com.example.mentalhealth.R;
 import com.example.mentalhealth.SaveSharedPreference;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.SignInMethodQueryResult;
 
 import java.util.regex.Pattern;
 
 public class SignUp extends AppCompatActivity {
     private static final String TAG = "Step 1/2";
+    private static final int RC_SIGN_IN = 1;
     /* access modifiers changed from: private */
     public TextInputLayout email;
     /* access modifiers changed from: private */
@@ -34,15 +46,35 @@ public class SignUp extends AppCompatActivity {
     public TextInputLayout name;
     /* access modifiers changed from: private */
     public TextInputLayout password;
+    GoogleSignInClient mGoogleSignInClient;
+
+    FirebaseAuth firebaseAuth;
 
     /* access modifiers changed from: protected */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView((int) R.layout.activity_sign_up);
-        this.password = (TextInputLayout) findViewById(R.id.textpass);
-        this.name = (TextInputLayout) findViewById(R.id.textname);
-        this.email = (TextInputLayout) findViewById(R.id.textemail);
-        ((Button) findViewById(R.id.stepOneButton)).setOnClickListener(new View.OnClickListener() {
+        ImageView back = findViewById(R.id.signup_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUp.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        this.mGoogleSignInClient = GoogleSignIn.getClient((Activity) this, new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build());
+        findViewById(R.id.googleSign2).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent signinintent = SignUp.this.mGoogleSignInClient.getSignInIntent();
+                SignUp signUp = SignUp.this;
+                signUp.startActivityForResult(signinintent, SignUp.RC_SIGN_IN);
+            }
+        });
+        this.password = (TextInputLayout) findViewById(R.id.textInputPassword);
+        this.name = (TextInputLayout) findViewById(R.id.textInputName);
+        this.email = (TextInputLayout) findViewById(R.id.textInputEmail);
+        ((Button) findViewById(R.id.cirRegisterButton)).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 InputMethodManager inputManager = (InputMethodManager) SignUp.this.getSystemService(INPUT_METHOD_SERVICE);
                 if (SignUp.this.getCurrentFocus() != null) {
@@ -135,5 +167,44 @@ public class SignUp extends AppCompatActivity {
 
     public static boolean isEmailValid(String email2) {
         return Pattern.compile("^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$", 2).matcher(email2).matches();
+    }
+
+    public void onLoginClick(View view) {
+        Intent intent = new Intent(SignUp.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == this.RC_SIGN_IN) {
+            try {
+                firebaseAuthWithGoogle(GoogleSignIn.getSignedInAccountFromIntent(data).getResult(ApiException.class));
+            } catch (ApiException e) {
+                Log.w(TAG, "Google sign in failed", e);
+//                Toast.makeText(this, "Google sign in failed" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+        Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
+        this.firebaseAuth.signInWithCredential(GoogleAuthProvider.getCredential(acct.getIdToken(), (String) null)).addOnCompleteListener((Activity) this, new OnCompleteListener<AuthResult>() {
+            public void onComplete(Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    if (task.getResult().getAdditionalUserInfo().isNewUser()) {
+                        SignUp.this.startActivity(new Intent(SignUp.this.getApplicationContext(), MainActivity.class));
+                    } else {
+                        FirebaseUser user = SignUp.this.firebaseAuth.getCurrentUser();
+                        Toast.makeText(SignUp.this.getApplicationContext(), user.getDisplayName(), Toast.LENGTH_SHORT).show();
+                        SaveSharedPreference.setUserName(SignUp.this.getApplicationContext(), user.getEmail());
+                        SignUp.this.startActivity(new Intent(SignUp.this.getApplicationContext(), MainActivity.class));
+                    }
+                    SignUp.this.finish();
+                    return;
+                }
+                Snackbar.make(SignUp.this.findViewById(R.id.googleSign), (CharSequence) "Authentication Failed.", BaseTransientBottomBar.LENGTH_SHORT).show();
+            }
+        });
     }
 }

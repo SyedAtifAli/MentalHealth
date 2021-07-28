@@ -46,6 +46,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation files('libs/Ab.jar')
 
+
+    //animated button for login
+    implementation 'br.com.simplepass:loading-button-android:1.14.0'
+
     implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
 
     //time picker

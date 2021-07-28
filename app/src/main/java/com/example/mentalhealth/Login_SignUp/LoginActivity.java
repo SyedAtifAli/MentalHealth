@@ -10,7 +10,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.ProgressBar;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,7 +53,9 @@ public class LoginActivity extends AppCompatActivity {
     /* access modifiers changed from: private */
     public TextInputLayout password;
     /* access modifiers changed from: private */
-    public Button register;
+    public TextView register;
+
+    ImageView plus;
 
     /* access modifiers changed from: protected */
     public void onCreate(Bundle savedInstanceState) {
@@ -61,10 +63,18 @@ public class LoginActivity extends AppCompatActivity {
         setContentView((int) R.layout.login_activity);
         this.firebaseAuth = FirebaseAuth.getInstance();
         final Intent i = new Intent(this, SignUp.class);
-        this.register = (Button) findViewById(R.id.button2);
-        this.email = (TextInputLayout) findViewById(R.id.editText);
-        this.login = (Button) findViewById(R.id.button);
-        this.password = (TextInputLayout) findViewById(R.id.editText2);
+        this.register = findViewById(R.id.register);
+        this.email = (TextInputLayout) findViewById(R.id.textInputEmail);
+        this.login = (Button) findViewById(R.id.cirLoginButton);
+        this.password = (TextInputLayout) findViewById(R.id.textInputPassword);
+        plus = findViewById(R.id.plus);
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, SignUp.class);
+                startActivity(intent);
+            }
+        });
         this.register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 LoginActivity.this.startActivity(i);
@@ -123,7 +133,7 @@ public class LoginActivity extends AppCompatActivity {
                 firebaseAuthWithGoogle(GoogleSignIn.getSignedInAccountFromIntent(data).getResult(ApiException.class));
             } catch (ApiException e) {
                 Log.w(TAG, "Google sign in failed", e);
-                Toast.makeText(this, "Google sign in failed" + e.getMessage(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Google sign in failed" + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -157,26 +167,26 @@ public class LoginActivity extends AppCompatActivity {
             InputMethodManager inputManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             if (inputManager != null) {
                 inputManager.hideSoftInputFromWindow(((View) Objects.requireNonNull(getCurrentFocus())).getWindowToken(), 2);
-                final ProgressBar progressBar = (ProgressBar) findViewById(R.id.MainProgressBar);
+//                final ProgressBar progressBar = (ProgressBar) findViewById(R.id.MainProgressBar);
                 this.login.setEnabled(false);
                 this.register.setEnabled(false);
-                progressBar.setVisibility(View.VISIBLE);
+//                progressBar.setVisibility(View.VISIBLE);
                 final String Stremail = this.email.getEditText().getText().toString();
                 String Strpass = this.password.getEditText().getText().toString();
                 if (Stremail.isEmpty() && Strpass.isEmpty()) {
                     this.email.setError("Enter your Email address");
                     this.password.setError("Enter a Valid password");
-                    progressBar.setVisibility(View.GONE);
+//                    progressBar.setVisibility(View.GONE);
                     this.login.setEnabled(true);
                     this.register.setEnabled(true);
                 } else if (Stremail.isEmpty()) {
                     this.email.setError("Enter your Email address");
-                    progressBar.setVisibility(View.GONE);
+//                    progressBar.setVisibility(View.GONE);
                     this.login.setEnabled(true);
                     this.register.setEnabled(true);
                 } else if (Strpass.isEmpty()) {
                     this.password.setError("Enter a valid password");
-                    progressBar.setVisibility(View.GONE);
+//                    progressBar.setVisibility(View.GONE);
                     this.login.setEnabled(true);
                     this.register.setEnabled(true);
                 } else {
@@ -190,7 +200,7 @@ public class LoginActivity extends AppCompatActivity {
                                         } else {
                                             Toast.makeText(LoginActivity.this.getApplicationContext(), "User not Registered!", Toast.LENGTH_SHORT).show();
                                         }
-                                        progressBar.setVisibility(View.GONE);
+//                                        progressBar.setVisibility(View.GONE);
                                         LoginActivity.this.login.setEnabled(true);
                                         LoginActivity.this.register.setEnabled(true);
                                     }
@@ -208,7 +218,7 @@ public class LoginActivity extends AppCompatActivity {
                                 LoginActivity.this.startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                                 LoginActivity.this.finish();
                             }
-                            progressBar.setVisibility(View.GONE);
+//                            progressBar.setVisibility(View.GONE);
                             LoginActivity.this.login.setEnabled(true);
                             LoginActivity.this.register.setEnabled(true);
                         }

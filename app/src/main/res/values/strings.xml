@@ -57,4 +57,6 @@
     <string name="editor_update_reminder_failed">Error with updating reminder</string>
     <string name="editor_update_reminder_successful">Reminder updated</string>
     <string name="repeat_off">Repeat Off</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
 </resources>

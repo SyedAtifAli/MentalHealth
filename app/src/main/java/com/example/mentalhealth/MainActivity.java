@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 //drawer name
                 TextView Name = findViewById(R.id.drawer_name);
                 Name.setText("Hi, " + finalName);
+
 
             }
 
@@ -229,13 +231,18 @@ public class MainActivity extends AppCompatActivity {
     // the item click listener callback
     // to open and close the navigation
     // drawer when the icon is clicked
+
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-
+        if(!drawerLayout.isOpen() && item.getItemId() == android.R.id.home){ // use android.R.id
+            drawerLayout.openDrawer(Gravity.LEFT);
+        }
+        else if(drawerLayout.isOpen() && item.getItemId() == android.R.id.home){
+            drawerLayout.close();
+        }
         return super.onOptionsItemSelected(item);
     }
-
 
     @Override
     public void onBackPressed() {

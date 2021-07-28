@@ -12,4 +12,12 @@
     <color name="colorSurface">#f3f9fe</color>
     <color name="colorAccent">@color/purple_500</color>
     <color name="fab_pressed">@color/purple_700</color>
+    <!--colors for light mode-->
+    <color name="contentTextColor">#020000</color>
+    <color name="register_bk_color">#11CFC5</color>
+    <color name="whiteTextColor">#fff</color>
+    <color name="primaryTextColor">#11CFC5</color>
+    <color name="darkTextColor">#020000</color>
+    <color name="themeColor">#11CFC5</color>
+
 </resources>
