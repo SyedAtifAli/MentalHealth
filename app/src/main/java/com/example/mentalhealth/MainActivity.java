@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                             Uri.fromParts("mailto", "team.yogaplus@gmail.com", (String) null));
                     StringBuilder o = new StringBuilder("\n\n\n\n\n\nDo not delete this - Android Version ");
                     o.append(Build.VERSION.SDK_INT);
-                    intent2.putExtra("android.intent.extra.TEXT", i.toString());
+                    intent2.putExtra("android.intent.extra.TEXT", o.toString());
                     intent2.putExtra("android.intent.extra.SUBJECT", "Feedback for mental health");
                     MainActivity.this.startActivity(Intent.createChooser(intent2, "Send email..."));
                     break;
