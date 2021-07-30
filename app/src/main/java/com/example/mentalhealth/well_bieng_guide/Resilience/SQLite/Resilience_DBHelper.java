@@ -12,6 +12,7 @@ public class Resilience_DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "resday.db";
     public final String COLUMN_DAY = "day";
+    public final String COLUMN_DATE = "date";
     public final String TABLE_NAME = "res_days";
 
     public Resilience_DBHelper(@Nullable Context context) {
@@ -20,7 +21,7 @@ public class Resilience_DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(" CREATE TABLE " + TABLE_NAME+ " (" + COLUMN_DAY +" INTEGER );");
+        db.execSQL(" CREATE TABLE " + TABLE_NAME+ " (" + COLUMN_DAY +" INTEGER, " + COLUMN_DATE +" INTEGER );" );
 
     }
 
@@ -30,12 +31,13 @@ public class Resilience_DBHelper extends SQLiteOpenHelper {
         this.onCreate(db);
     }
 
-    public void saveDay(int day){
+    public void saveDay(int day, int date){
         SQLiteDatabase sQLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         String query = "Delete from "+TABLE_NAME+" Where "+COLUMN_DAY+" Like \'%\';";
         sQLiteDatabase.execSQL(query);
         contentValues.put(COLUMN_DAY , day);
+        contentValues.put(COLUMN_DATE , date);
         sQLiteDatabase.insert(TABLE_NAME, null, contentValues);
         sQLiteDatabase.close();
     }
@@ -52,5 +54,18 @@ public class Resilience_DBHelper extends SQLiteOpenHelper {
             }while (cursor.moveToNext());
         }
         return day;
+    }
+    public int getDate(){
+        SQLiteDatabase sQLiteDatabase = this.getWritableDatabase();
+        String query = "Select * from "+TABLE_NAME+";";
+//        sQLiteDatabase.execSQL(query);
+        int date = 0;
+        Cursor cursor = this.getWritableDatabase().rawQuery(query, null);
+        if(cursor.moveToNext()){
+            do{
+                date = cursor.getInt(1);
+            }while (cursor.moveToNext());
+        }
+        return date;
     }
 }

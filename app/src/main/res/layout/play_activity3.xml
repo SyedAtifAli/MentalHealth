@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1af41">
+
+    <ImageButton
+        android:id="@+id/activity_back3"
+        android:layout_width="56dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:src="@drawable/ic_arrow_back_white" />
+
+    <TextView
+        android:id="@+id/activity_title3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_back3"
+        android:text="Deep Breathing"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="360dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/animation_circle" />
+
+    <ImageView
+        android:id="@+id/vfx"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/play_bg"
+        android:visibility="visible" />
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ring" />
+
+    <ImageButton
+        android:id="@+id/activity_play3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_play_arrow_white" />
+
+    <TextView
+        android:id="@+id/activity_time3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_play3"
+        android:layout_centerHorizontal="true"
+        android:text="0:0/0:0"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <SeekBar
+        android:id="@+id/activity_seekbar3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_time3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:thumbTint="@color/white"
+        android:visibility="visible" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:layout_below="@id/activity_title3"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/headphones"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="Use Headphones"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/activity_done3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:text="Done"
+        android:textColor="@color/white"
+        android:background="@drawable/button_background_white"/>
+
+
+</RelativeLayout>

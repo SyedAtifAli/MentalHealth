@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -15,13 +15,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mentalhealth.R;
+import com.example.mentalhealth.Smiley.Smiley_DBHelper;
 import com.example.mentalhealth.home.AP.AP_Adapter;
 import com.example.mentalhealth.home.AP.AP_Objects;
 import com.example.mentalhealth.home.Activities.RA_Adapter;
 import com.example.mentalhealth.home.Activities.RA_Objects;
 import com.example.mentalhealth.well_bieng_guide.Well_Being_Activity;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.hsalf.smilerating.BaseRating;
 import com.hsalf.smilerating.SmileRating;
 
@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
 
     RecyclerView AP;  //Additional Plan
     RecyclerView RA;  //Recommended Activities
-    FloatingActionButton WB_fab;
+    RelativeLayout WB_fab;
     WebView mood_wv;
 
     @Override
@@ -40,15 +40,27 @@ public class HomeFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_home, null);
 
+        RelativeLayout plan = v.findViewById(R.id.my_plan);
+        plan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),my_plan.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+
         AP = v.findViewById(R.id.additional_plans_rv);
         AP.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
         List<AP_Objects> list = new ArrayList<>();
-        list.add(new AP_Objects("Foundation Course for Anxity", "6 days"));
+        list.add(new AP_Objects("Foundation Course for Anxiety", "6 days"));
         list.add(new AP_Objects("Stress\nManagement", "6 days"));
-        list.add(new AP_Objects("Foundation of Anger\nManagement", "6 days"));
-        list.add(new AP_Objects("Overcome\nOverThinking", "6 days"));
-        list.add(new AP_Objects("Cognitive Dissonance? No More", "6 days"));
+        list.add(new AP_Objects("Foundation\nof Anger\nManagement", "6 days"));
+        list.add(new AP_Objects("Foundation course for depression", "6 days"));
+        list.add(new AP_Objects("Have a nice Sleep", "6 days"));
+        list.add(new AP_Objects("Basics of\nliving Happier", "6 days"));
+
         AP_Adapter ap_adapter = new AP_Adapter(getContext(), list);
         AP.setAdapter(ap_adapter);
 
@@ -85,6 +97,7 @@ public class HomeFragment extends Fragment {
 
         SmileRating smileRating = (SmileRating) v.findViewById(R.id.smiley);
         smileRating.setSelectedSmile(BaseRating.GOOD);
+        Smiley_DBHelper helper = new Smiley_DBHelper(getContext());
         smileRating.setOnSmileySelectionListener(new SmileRating.OnSmileySelectionListener() {
             @Override
             public void onSmileySelected(@BaseRating.Smiley int smiley, boolean reselected) {
@@ -93,19 +106,24 @@ public class HomeFragment extends Fragment {
                 // Except if it first time, then the value will be false.
                 switch (smiley) {
                     case SmileRating.BAD:
-                        Toast.makeText(getContext(), "BAD", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getContext(), "BAD", Toast.LENGTH_SHORT).show();
+                        helper.saveSmile(2);
                         break;
                     case SmileRating.GOOD:
-                        Toast.makeText(getContext(), "GOOD", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getContext(), "GOOD", Toast.LENGTH_SHORT).show();
+                        helper.saveSmile(4);
                         break;
                     case SmileRating.GREAT:
-                        Toast.makeText(getContext(), "GREAT", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getContext(), "GREAT", Toast.LENGTH_SHORT).show();
+                        helper.saveSmile(5);
                         break;
                     case SmileRating.OKAY:
-                        Toast.makeText(getContext(), "OKAY", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getContext(), "OKAY", Toast.LENGTH_SHORT).show();
+                        helper.saveSmile(3);
                         break;
                     case SmileRating.TERRIBLE:
-                        Toast.makeText(getContext(), "TERRIBLE", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getContext(), "TERRIBLE", Toast.LENGTH_SHORT).show();
+                        helper.saveSmile(1);
                         break;
                 }
             }

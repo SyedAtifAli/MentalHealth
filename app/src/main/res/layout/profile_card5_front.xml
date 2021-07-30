@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="1000"
+            android:text="14"
             android:textAlignment="center"
             android:textColor="#494884"
             android:textSize="24sp"

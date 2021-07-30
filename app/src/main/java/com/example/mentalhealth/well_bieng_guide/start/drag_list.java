@@ -70,5 +70,45 @@ public class drag_list extends AppCompatActivity {
                 });
             }
         }
+        else if(course.equals("anger")){
+            if(day == 1){
+                title.setText("From this list select the sign you have experienced");
+                ArrayList arrayList = new ArrayList();
+                arrayList.add("Difficulty concentrating");
+                arrayList.add("Memory problem");
+                arrayList.add("Thoughts of hurting someone");
+                arrayList.add("Bitter,harsh or critical thoughts");
+                arrayList.add("Overthinking about the problem");
+                arrayList.add("Rapid heart beat");
+                arrayList.add("Shaking");
+                arrayList.add("Tense muscles");
+                arrayList.add("Headaches");
+                arrayList.add("Frowning");
+                arrayList.add("Hot or red face");
+                arrayList.add("Rage");
+                arrayList.add("Humiliation");
+                arrayList.add("Anger about unrelated things");
+                arrayList.add("Irritability");
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_list_item_1, android.R.id.text1, arrayList);
+                listView.setAdapter(adapter);
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        String value = adapter.getItem(position);
+                        Toast.makeText(getApplicationContext(),value,Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(drag_list.this,drag_select.class);
+                        intent.putExtra("course","anger");
+                        intent.putExtra("day",1);
+                        intent.putExtra("strength",value);
+                        startActivity(intent);
+
+                    }
+                });
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mentalhealth">
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -15,7 +16,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Mentalhealth">
+        android:theme="@style/Theme.Mentalhealth"
+        tools:replace="android:theme">
         <activity
             android:name=".Login_SignUp.Splash"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
@@ -28,6 +30,8 @@
         <activity
             android:name=".diary.AddActivity"
             android:theme="@style/MyTheme" />
+        <activity android:name=".fragments.my_plan"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
 
         <activity
             android:name=".fragments.ProfileFragment"
@@ -118,10 +122,12 @@
             android:name=".MainActivity"
             android:theme="@style/MyTheme" />
 
-        <activity android:name=".Reminders.Reminder"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
-        <activity android:name=".Reminders.AddReminderActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+        <activity
+            android:name=".Reminders.Reminder"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".Reminders.AddReminderActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
 
         <provider
             android:name=".Reminders.data.AlarmReminderProvider"
@@ -132,8 +138,34 @@
             android:name=".Reminders.reminder.ReminderAlarmService"
             android:exported="false" />
 
+        <activity
+            android:name=".Profile.Edit_profile_act"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".Profile.choose_dp"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".home.anxiety.Anxiety_start"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".home.anger.anger_start"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".home.depression.depression_start"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".home.happy.happy_start"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".home.sleep.sleep_start"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".home.stress.stress_start"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".well_bieng_guide.start.play_activity3"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
-
 
 
 </manifest>

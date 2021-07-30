@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blue_bg">
+
+    <RelativeLayout
+        android:id="@+id/selected_avatar_ep"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_centerHorizontal="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/select_pic"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/avatar1" />
+
+        <ImageView
+            android:layout_width="182dp"
+            android:layout_height="182dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/round_button_full" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/choose_avatar_ep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/selected_avatar_ep"
+        android:layout_centerHorizontal="true"
+        android:text="Choose Avatar"
+        android:textColor="@color/purple_500"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    -
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/choose_avatar_ep"
+        android:layout_margin="6dp"
+        app:cardCornerRadius="16dp">
+
+
+        -
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="vertical">
+
+
+            -
+
+            <RelativeLayout
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_below="@+id/choose_avatar_ep"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/static_prsn"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/baseline_person_black_24dp" />
+
+                <TextView
+                    android:id="@+id/static_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="65dp"
+                    android:text="Name"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/name_et_ep"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/static_name"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/static_prsn" />
+
+            </RelativeLayout>
+
+
+            -
+
+            <RelativeLayout
+                android:id="@+id/edit_height"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_below="@+id/edit_name"
+                android:layout_marginTop="5dp">
+
+                <ImageView
+                    android:id="@+id/static_hgt"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_settings_black" />
+
+                <TextView
+                    android:id="@+id/static_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="65dp"
+                    android:text="Email"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/height_et_ep"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/static_height"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/static_hgt"
+                    android:digits="0123456789" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/edit_gender"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_below="@+id/edit_weight">
+
+                <ImageView
+                    android:id="@+id/static_gndr"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:backgroundTint="#fff"
+                    android:src="@drawable/gender_selection_icon" />
+
+                <TextView
+                    android:id="@+id/static_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="65dp"
+                    android:text="Gender"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/gender_spinner"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/static_gender"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toEndOf="@+id/static_gndr"
+                    android:textDirection="firstStrong" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/save_ep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="6dp"
+        android:background="@color/white"
+        android:elevation="5dp"
+        android:text="Save"
+        android:textColor="@color/black" />
+
+</RelativeLayout>

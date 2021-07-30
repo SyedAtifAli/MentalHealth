@@ -82,6 +82,25 @@
         android:layout_marginTop="6dp"
         android:thumbTint="@color/white"
         android:visibility="visible" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/headphones"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:text="Use Headphones"/>
+</LinearLayout>
 
 
 </RelativeLayout>

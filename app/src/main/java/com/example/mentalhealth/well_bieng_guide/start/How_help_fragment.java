@@ -84,8 +84,7 @@ public class How_help_fragment extends Fragment {
                             intent.putExtra("course", course);
                             intent.putExtra("day", 2);
                             startActivity(intent);
-                        }
-                        else if(day.equals("Day 3")) {
+                        } else if (day.equals("Day 3")) {
                             Intent intent = new Intent(context, Bullets.class);
                             intent.putExtra("course", course);
                             intent.putExtra("day", day);
@@ -93,7 +92,33 @@ public class How_help_fragment extends Fragment {
                         }
 
                     }
+                    if (course.equals("anxiety")) {
+                        if (day.equals("Day 1")) {
+                            Intent intent = new Intent(context, play_activity3.class);
+                            intent.putExtra("title", "Quick Muscle Relaxation");
+                            intent.putExtra("sound", R.raw.pmr);
+                            intent.putExtra("day", 1);
+                            startActivity(intent);
+                        }
 
+                    }if (course.equals("stress")) {
+                        if (day.equals("Day 1")) {
+                            Intent intent = new Intent(context, play_activity3.class);
+                            intent.putExtra("title", "Belly Breathing");
+                            intent.putExtra("sound", R.raw.pmr);
+                            intent.putExtra("day", 1);
+                            startActivity(intent);
+                        }
+
+                    }if (course.equals("anger")) {
+                        if (day.equals("Day 1")) {
+                            Intent intent = new Intent(context, Para.class);
+                            intent.putExtra("course", "anger");
+                            intent.putExtra("day", 1);
+                            startActivity(intent);
+                        }
+
+                    }
                 }
             }
         });

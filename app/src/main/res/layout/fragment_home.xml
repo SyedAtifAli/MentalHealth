@@ -31,13 +31,14 @@
                 app:cardCornerRadius="10dp">
 
                 <RelativeLayout
+                    android:id="@+id/well_being_arrow"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:scaleType="fitXY"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/sun" />
 
                     <TextView
@@ -45,19 +46,22 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/alatsi"
+                        android:textColor="#6d4c41"
                         android:text="Your Well-being Guide"
-                        android:textSize="16sp" />
+                        android:textSize="17sp" />
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/well_being_arrow"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        app:elevation="0dp"
+                        android:clickable="false"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="12dp"
                         android:backgroundTint="#9cd1b3"
                         android:elevation="0dp"
-                        android:src="@drawable/right_arrow"
+                        app:maxImageSize="40dp"
+                        android:src="@drawable/right_arrow_thin"
                         app:fabCustomSize="40dp"
                         app:tint="@color/white" />
 
@@ -89,6 +93,7 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
+                        android:id="@+id/my_plan"
                         android:layout_height="match_parent">
 
                         <TextView

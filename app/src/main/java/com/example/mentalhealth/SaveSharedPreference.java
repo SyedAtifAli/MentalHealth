@@ -3,6 +3,7 @@ package com.example.mentalhealth;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
 import kotlin.Metadata;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.internal.Intrinsics;
@@ -24,6 +25,9 @@ public final class SaveSharedPreference {
     private static final String UNIT = "unit";
     private static final String USER = "user";
     private static final String FingerPrint = "fingerprint";
+    private static final String DP = "dp";
+    private static final String Gender = "gender";
+    private static final String Email = "email";
 
     private SaveSharedPreference() {
     }
@@ -48,6 +52,27 @@ public final class SaveSharedPreference {
         editor.putString(PREF_USER_NAME, userName);
         editor.apply();
     }
+
+    @JvmStatic
+    public static final void setAge(Context ctx, String value) {
+        SharedPreferences.Editor editor = INSTANCE.getSharedPreferences(ctx).edit();
+        editor.putString(Email, value);
+        editor.apply();
+    }
+
+    @JvmStatic
+    public static final void setGender(Context ctx, String value) {
+        SharedPreferences.Editor editor = INSTANCE.getSharedPreferences(ctx).edit();
+        editor.putString(Gender, value);
+        editor.apply();
+    }
+    @JvmStatic
+    public static final void setDp(Context ctx, int value) {
+        SharedPreferences.Editor editor = INSTANCE.getSharedPreferences(ctx).edit();
+        editor.putInt(DP, value);
+        editor.apply();
+    }
+
     @JvmStatic
     public static final void setFingerPrint(Context ctx, Boolean finger) {
         SharedPreferences.Editor editor = INSTANCE.getSharedPreferences(ctx).edit();
@@ -70,14 +95,14 @@ public final class SaveSharedPreference {
     }
 
 
-
     @JvmStatic
     public static final void setBranch(Context ctx, int num) {
         SharedPreferences.Editor editor = INSTANCE.getSharedPreferences(ctx).edit();
         editor.putInt(BRANCH, num);
         editor.apply();
     }
-@JvmStatic
+
+    @JvmStatic
     public static final void setUnit(Context ctx, int num) {
         SharedPreferences.Editor editor = INSTANCE.getSharedPreferences(ctx).edit();
         editor.putInt(UNIT, num);
@@ -118,7 +143,8 @@ public final class SaveSharedPreference {
         editor.putInt(POP, pop);
         editor.apply();
     }
-@JvmStatic
+
+    @JvmStatic
     public static final void setRev(Context ctx, boolean value) {
         SharedPreferences.Editor editor = INSTANCE.getSharedPreferences(ctx).edit();
         editor.putBoolean(REVIEW, value);
@@ -142,6 +168,20 @@ public final class SaveSharedPreference {
     @JvmStatic
     public static final String getUser(Context ctx) {
         return INSTANCE.getSharedPreferences(ctx).getString(USER, "");
+    }
+
+    @JvmStatic
+    public static final int getDP(Context ctx) {
+        return INSTANCE.getSharedPreferences(ctx).getInt(DP, 1);
+    }
+
+    @JvmStatic
+    public static final String getEmail(Context ctx) {
+        return INSTANCE.getSharedPreferences(ctx).getString(Email, "email");
+    }
+    @JvmStatic
+    public static final String getGender(Context ctx) {
+        return INSTANCE.getSharedPreferences(ctx).getString(DP, "email");
     }
 
     @JvmStatic

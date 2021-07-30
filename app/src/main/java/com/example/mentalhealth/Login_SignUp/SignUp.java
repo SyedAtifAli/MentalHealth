@@ -33,6 +33,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.SignInMethodQueryResult;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class SignUp extends AppCompatActivity {
@@ -93,7 +96,8 @@ public class SignUp extends AppCompatActivity {
                     SignUp.this.password.setError("Enter a valid password");
                 } else if (Strname.isEmpty()) {
                     SignUp.this.name.setError("Enter your name");
-                } else {
+                }
+                else {
                     FirebaseAuth unused = SignUp.this.mAuth = FirebaseAuth.getInstance();
                     if (SignUp.isEmailValid(Stremail)) {
                         SignUp.this.mAuth.fetchSignInMethodsForEmail(Stremail).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
@@ -109,6 +113,7 @@ public class SignUp extends AppCompatActivity {
                                             SignUp.this.mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 public void onComplete(Task<Void> task) {
                                                     if (task.isSuccessful()) {
+                                                        SaveSharedPreference.setUser(SignUp.this,Strname);
                                                         Toast.makeText(SignUp.this, "Registered! Email Verification sent", Toast.LENGTH_LONG).show();
                                                         Toast.makeText(SignUp.this, Strname, Toast.LENGTH_SHORT).show();
                                                         return;
@@ -161,6 +166,7 @@ public class SignUp extends AppCompatActivity {
                         SignUp.this.name.setError((CharSequence) null);
                     }
                 });
+
             }
         });
     }
@@ -177,12 +183,15 @@ public class SignUp extends AppCompatActivity {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == this.RC_SIGN_IN) {
+        if (requestCode == RC_SIGN_IN) {
             try {
                 firebaseAuthWithGoogle(GoogleSignIn.getSignedInAccountFromIntent(data).getResult(ApiException.class));
             } catch (ApiException e) {
                 Log.w(TAG, "Google sign in failed", e);
 //                Toast.makeText(this, "Google sign in failed" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+            catch (NullPointerException e){
+                Log.w(TAG, "Google sign in failed", e);
             }
         }
     }
@@ -190,9 +199,9 @@ public class SignUp extends AppCompatActivity {
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
         this.firebaseAuth.signInWithCredential(GoogleAuthProvider.getCredential(acct.getIdToken(), (String) null)).addOnCompleteListener((Activity) this, new OnCompleteListener<AuthResult>() {
-            public void onComplete(Task<AuthResult> task) {
+            public void onComplete(@NotNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    if (task.getResult().getAdditionalUserInfo().isNewUser()) {
+                    if (Objects.requireNonNull(task.getResult().getAdditionalUserInfo()).isNewUser()) {
                         SignUp.this.startActivity(new Intent(SignUp.this.getApplicationContext(), MainActivity.class));
                     } else {
                         FirebaseUser user = SignUp.this.firebaseAuth.getCurrentUser();

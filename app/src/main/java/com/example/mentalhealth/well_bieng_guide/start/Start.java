@@ -60,6 +60,19 @@ public class Start extends AppCompatActivity {
         else if(course.equals("lon")){
 
         }
+        else if(course.equals("anxiety")){
+            if(day.equals("Day 1")) {
+                return "Do you ever wonder what you can do to lessen the negative impact of anxiety? We've got you covered. Today's audio exercise will leave you feeling calm and relaxed in a matter of minutes";
+            }
+        }else if(course.equals("stress")){
+            if(day.equals("Day 1")) {
+                return "Stressful times can have a negative impact on yur mind and body. Belly breathing, also called diaphragmatic breathing, will help you change the way you breath in order to protect you from stress.";
+            }
+        }else if(course.equals("anger")){
+            if(day.equals("Day 1")) {
+                return "Do you now what happens to your mind and body when you are angry? Today's activity will help you identify and better understand the different signs of anger.";
+            }
+        }
         else{
             //self love
         }
@@ -76,6 +89,19 @@ public class Start extends AppCompatActivity {
             }
             else if(day.equals("Day 3")){
                 return "";
+            }
+        }
+        else if(course.equals("anxiety")){
+            if(day.equals("Day 1")) {
+                return "Quick Muscle Relaxation is a technique that targets areas in your body that typically hold tension. Doing this exercise enables you to let go of anxiety and feel at ease, physically and mentally.";
+            }
+        } else if(course.equals("stress")){
+            if(day.equals("Day 1")) {
+                return "As the name suggests, this activity involves breathing frm your belly. This deeper form of breathing can reduce heart rate and stabilise blood pressure. As a result, it can relax your body and mind.";
+            }
+        }else if(course.equals("anger")){
+            if(day.equals("Day 1")) {
+                return "Anger doesn't go from 0 to 100 without any warning - there are several signs of anger to watch out for. Recognising these signs can help you take action before your anger gets out of hand.";
             }
         }
         return "";

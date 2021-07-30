@@ -62,5 +62,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/ic_onboarding_two"
-        android:layout_marginBottom="-25dp"/>
+        android:layout_marginBottom="-15dp"/>
 </RelativeLayout>

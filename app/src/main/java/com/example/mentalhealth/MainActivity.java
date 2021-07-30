@@ -56,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
             name = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
             SaveSharedPreference.setUser(this, name);
         }
+        else{
+            name = SaveSharedPreference.getUser(this);
+        }
 
         drawerLayout = findViewById(R.id.my_drawer_layout);
         String finalName = name;
@@ -203,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.nav_logout:
                     FirebaseAuth.getInstance().signOut();
+                    SaveSharedPreference.setRef(MainActivity.this,false);
                     Toast.makeText(this, "You are now signed out!", Toast.LENGTH_LONG).show();
                     break;
             }

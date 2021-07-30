@@ -47,49 +47,49 @@ public class RA_Adapter extends RecyclerView.Adapter<RA_Holder>{
                     Intent intent = new Intent(context, play_activity.class);
                     intent.putExtra("title",object_list.get(position).title);
                     intent.putExtra("details",object_list.get(position).title);
-                    intent.putExtra("sound",R.raw.deep);
+                    intent.putExtra("sound",R.raw.deepbreathing);
                     context.startActivity(intent);
                 }if(position == 1){
                     Intent intent = new Intent(context, play_activity.class);
                     intent.putExtra("title",object_list.get(position).title);
                     intent.putExtra("details",object_list.get(position).title);
-                    intent.putExtra("sound",R.raw.deep);
+                    intent.putExtra("sound",R.raw.pmr);
                     context.startActivity(intent);
                 }if(position == 2){
                     Intent intent = new Intent(context, play_activity.class);
-                    intent.putExtra("title",object_list.get(position).title);
-                    intent.putExtra("details",object_list.get(position).title);
-                    intent.putExtra("sound",R.raw.deep);
+                    intent.putExtra("title","Progressive Muscle Relaxation");
+                    intent.putExtra("details","Progressive Muscle Relaxation");
+                    intent.putExtra("sound",R.raw.pmr);
                     context.startActivity(intent);
                 }if(position == 3){
                     Intent intent = new Intent(context, play_activity.class);
                     intent.putExtra("title",object_list.get(position).title);
                     intent.putExtra("details",object_list.get(position).title);
-                    intent.putExtra("sound",R.raw.deep);
+                    intent.putExtra("sound",R.raw.pmr);
                     context.startActivity(intent);
                 }if(position == 4){
                     Intent intent = new Intent(context, play_activity.class);
                     intent.putExtra("title",object_list.get(position).title);
                     intent.putExtra("details",object_list.get(position).title);
-                    intent.putExtra("sound",R.raw.deep);
+                    intent.putExtra("sound",R.raw.beach);
                     context.startActivity(intent);
                 }if(position == 5){
                     Intent intent = new Intent(context, play_activity.class);
                     intent.putExtra("title",object_list.get(position).title);
                     intent.putExtra("details",object_list.get(position).title);
-                    intent.putExtra("sound",R.raw.deep);
+                    intent.putExtra("sound",R.raw.thought);
                     context.startActivity(intent);
                 }if(position == 6){
                     Intent intent = new Intent(context, play_activity.class);
                     intent.putExtra("title",object_list.get(position).title);
                     intent.putExtra("details",object_list.get(position).title);
-                    intent.putExtra("sound",R.raw.deep);
+                    intent.putExtra("sound",R.raw.self_compasion);
                     context.startActivity(intent);
                 }if(position == 7){
                     Intent intent = new Intent(context, play_activity.class);
                     intent.putExtra("title",object_list.get(position).title);
                     intent.putExtra("details",object_list.get(position).title);
-                    intent.putExtra("sound",R.raw.deep);
+                    intent.putExtra("sound",R.raw.beach);
                     context.startActivity(intent);
                 }if(position == 8){ //walking
                     Intent intent = new Intent(context, play_activity2.class);

@@ -71,7 +71,7 @@ public class Well_Being_Activity extends AppCompatActivity {
         sequence.setConfig(config);
 
         sequence.addSequenceItem(easyFlipView,
-                "Introducing your very own 2021 well-being guid\nTap on the cards to know the details.", "GOT IT");
+                "Introducing your very own 2021 well-being guide\nTap on the cards to know the details.", "GOT IT");
 
         sequence.addSequenceItem(resilience,
                 "Click on the name of the course to start it.", "GOT IT");

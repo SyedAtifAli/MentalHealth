@@ -18,6 +18,8 @@ import com.example.mentalhealth.well_bieng_guide.Model.DAYS;
 import com.example.mentalhealth.well_bieng_guide.Resilience.SQLite.Resilience_DBHelper;
 import com.example.mentalhealth.well_bieng_guide.start.Start;
 
+import org.joda.time.DateTime;
+
 import java.util.List;
 
 public class RES_daysAdapter extends RecyclerView.Adapter<RES_daysAdapter.myViewHolder> {
@@ -64,7 +66,7 @@ public class RES_daysAdapter extends RecyclerView.Adapter<RES_daysAdapter.myView
                 }
             });
 
-        } else if (position == day) {
+        } else if (position == day && DateTime.now().getDayOfYear() > helper.getDate()) {
             holder.dayCount.setText(list.get(position).getDay());
             holder.dayTitle.setText(list.get(position).getTitle());
             holder.startDay.setVisibility(View.VISIBLE);

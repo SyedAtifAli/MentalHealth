@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.mentalhealth.MainActivity;
 import com.example.mentalhealth.R;
 import com.example.mentalhealth.SaveSharedPreference;
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
@@ -27,7 +28,7 @@ public class OnBoardingScreen extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (SaveSharedPreference.getRef(this)) {
-            startActivity(new Intent(this, SignUp.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
         setContentView((int) R.layout.activity_on_boarding_screenm);

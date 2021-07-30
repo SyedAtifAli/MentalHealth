@@ -115,7 +115,8 @@
             <include layout="@layout/profile_card3_back" />
 
             <!-- Front Layout Goes Here -->
-            <include layout="@layout/profile_card3_front" />
+            <include layout="@layout/profile_card3_front"
+                android:id="@+id/mood_track"/>
 
         </com.wajahatkarim3.easyflipview.EasyFlipView>
 

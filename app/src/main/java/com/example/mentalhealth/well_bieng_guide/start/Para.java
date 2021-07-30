@@ -153,6 +153,38 @@ public class Para extends AppCompatActivity {
 
             }
         }
+        else if(course.equals("anger")){
+            if(day == 1){
+                title.setText("identify the signs of your anger in 3 simple steps");
+                content.setText(Html.fromHtml("<b>Step 1: Check out our list</b><br>" +
+                        "We will give you 4 separate lists, each with" +
+                        "different types of signs commonly seen in" +
+                        "anger. You will be presented with cognitive" +
+                        "(mind-related) signs, physical signs, emotional" +
+                        "signs, and behavioural signs."+
+                        "<br><br><b>Step 2: Pick out the signs<b><br>" +
+                        "Think of all the times you have felt angry. Read" +
+                        "through the lists carefully, and select the signs" +
+                        "that you have experienced yourself. If none of" +
+                        "the signs in a list apply to you, just move to the" +
+                        "next screen"+
+                        "<br><br><b>Step 3: Understand your signs<b><br>" +
+                        "Once you have gone through all the lists, you" +
+                        "will be presented with a final list of all the signs" +
+                        "you have experienced. You can click on each to" +
+                        "learn about them."));
+
+                next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Para.this,drag_list.class);
+                        intent.putExtra("course","anger");
+                        intent.putExtra("day",1);
+                        startActivity(intent);
+                    }
+                });
+            }
+        }
 
 
 

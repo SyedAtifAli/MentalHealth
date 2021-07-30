@@ -69,6 +69,51 @@ public class nutshell extends AppCompatActivity {
                 });
             }
         }
+        else if(course.equals("anxiety")){
+            if(day == 1){
+                title.setText("Quick Muscle Relaxation");
+                content.setText("Use your muscles to beat anxiety! You can do this exercise whenever you find your body tensing up due to anxiety. In fact, regular practise can protect you from feeling anxious in the first place.");
+                next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(nutshell.this,rate_activity.class);
+                        intent.putExtra("course", "anxiety");
+                        intent.putExtra("day", 1);
+                        startActivity(intent);
+                    }
+                });
+            }
+        }
+        else if (course.equals("stress")) {
+            if (day == 1) {
+                title.setText("Belly Breathing");
+                content.setText("Give your body a dose of fresh oxygen with belly breathing. This technique can be difficult for beginners, so be patient with yourself. You will get better at it with practise!");
+                next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(nutshell.this, rate_activity.class);
+                        intent.putExtra("course", "stress");
+                        intent.putExtra("day", 1);
+                        startActivity(intent);
+                    }
+                });
+            }
+        }
+        else if (course.equals("anger")) {
+            if (day == 1) {
+                title.setText("Sign of Anger");
+                content.setText("");
+                next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(nutshell.this, rate_activity.class);
+                        intent.putExtra("course", "anger");
+                        intent.putExtra("day", 1);
+                        startActivity(intent);
+                    }
+                });
+            }
+        }
 
     }
 }
